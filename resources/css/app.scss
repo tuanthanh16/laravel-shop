@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    margin: 0;
+}
+body {
+    // color: green;
+    font-size: 1.5rem;
+}
+
+input {
+    // padding-top: 5px;
+    // padding-bottom: 5px;
+    padding: 5px;
+}
+
+.navbar {
+    display: flex;
+    margin-bottom: 1rem;
+    background-color: aliceblue;
+    padding: 10px 20px;
+    a {
+        margin-left: 10px;
+    }
+    .navbar_logout {
+        border: none;
+        margin-left: 10px;
+        background-color: aliceblue;
+        cursor: pointer;
+        font-size: 1.2rem;
+        border-radius: 5px;
+    }
+    .navbar_logout:hover {
+        background-color: red;
+        color: white;
+    }
+    .navbar_admin {
+        margin-left: 20px;
+        background-color: green;
+        color: lightgreen;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 5px;
+    }
+}
+
+.latest-books {
+    font-weight: 700;
+}
+.book-item {
+    h5 {
+        margin: 0;
+        font-style: italic;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: coral;
+    }
+}
+
+.publisher {
+    font-style: italic;
+    color: green;
+}
+
+.alert-error {
+    padding: 10px;
+    background-color: red;
+    color: white;
+}
+
+.alert-success {
+    padding: 10px;
+    background-color: green;
+    color: lightgreen;
+}
+
+.dashboard {
+    background-color: aquamarine;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    &_header {
+        display: flex;
+        background-color: brown;
+        color: aliceblue;
+        justify-content: center;
+    }
+    &_actions {
+        display: flex;
+        flex-direction: row;
+        height: 300px;
+        &--product,
+        &--sale {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            a {
+                text-decoration: none;
+                background-color: white;
+                border-radius: 5px;
+                border: solid 1px white;
+                margin: 1rem;
+                text-align: center;
+                cursor: pointer;
+                &:hover {
+                    background-color: rgb(131, 164, 192);
+                }
+            }
+        }
+    }
+}
+
+// this is for product list
+table,
+th,
+td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.product {
+    // background-color: aqua;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+    &_header {
+        font-weight: 700;
+    }
+}
+
+.product_name,
+.product_price,
+.product_code,
+.product_stock {
+    width: 200px;
+}
