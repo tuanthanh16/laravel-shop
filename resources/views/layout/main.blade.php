@@ -32,6 +32,7 @@
         {{-- check admin middware --}}
         @can('admin')
             <span class="navbar_admin">Welcome Admin</span>
+            <a href={{ route('admin.home') }}>Admin dashboard</a>
         @endcan
 
     </nav>
