@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sales', function (Blueprint $table) {
-            $table->id();
-            $table->string('sale_nr', 50)->nullable();
-            $table->date('date')->nullable();
-            $table->boolean('status')->default(0);
-            $table->foreignId('customer_id')->nullable();
-            $table->timestamps();
+        Schema::table('sales', function (Blueprint $table) {
+            //
+            $table->decimal('total', 10, 2, true)->after('sale_nr')->default(0);
         });
     }
 
@@ -30,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sales');
+        Schema::table('sales', function (Blueprint $table) {
+            //
+            $table->dropColumn('total');
+        });
     }
 };

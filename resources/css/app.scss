@@ -93,7 +93,8 @@ input {
         flex-direction: row;
         height: 300px;
         &--product,
-        &--sale {
+        &--sale,
+        &--detail {
             display: flex;
             flex-direction: column;
             width: 50%;
@@ -136,4 +137,20 @@ td {
 .product_code,
 .product_stock {
     width: 200px;
+}
+
+//single-sale information page
+.sale_container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    display: flex;
+    &--form {
+        width: 50%;
+    }
+}
+
+.inner-form {
+    display: flex;
+    flex-direction: row;
 }

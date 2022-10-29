@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Sale extends Model
 {
     use HasFactory;
+    protected $fillable = ['sale_nr', 'date', 'status', 'customer_id'];
+
+    public function details(){
+        return $this->hasMany(SaleDetail::class);
+    }
 }

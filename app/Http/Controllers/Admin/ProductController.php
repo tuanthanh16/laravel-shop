@@ -23,8 +23,6 @@ class ProductController extends Controller
         session()->flash('success_message','Product created successfully!');
         return redirect()->route('admin.home');
         
-        // dd($product);
-        
     }
 
     //get method, url admin/list-product
@@ -85,4 +83,22 @@ class ProductController extends Controller
         session()->flash('success_message','Product updated successfully!');
         return redirect()->route('admin.home');
     }
+
+    //route /admin/product/{product_id}/delete
+    public function delete($product_id){
+        $product = Product::findOrFail($product_id);
+        $product->delete();
+        session()->flash('success_message','Product deleted successfully!');
+        return redirect()->route('admin.home');
+    }
+
+    public function search(){
+        $keyword = $_GET['keyword'];
+        $products = Product::where('name', 'like', "%".$keyword."%")
+            ->orWhere('description', 'like', "%".$keyword."%")
+            ->get();
+        // dd($products);
+        return view('admin.list-product', compact('products'));
+    }
+
 }

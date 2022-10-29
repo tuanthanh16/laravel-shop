@@ -12,12 +12,17 @@
             <div class="dashboard_actions--product">
                 <a href={{ route('new.product.form') }}>New Product</a>
                 <a href={{ route('product.list') }}>List Product</a>
-                <a href="">Delete Product</a>
+                <a href={{ route('search') }}>Search Product</a>
             </div>
             <div class="dashboard_actions--sale">
-                <a href="">New Order</a>
-                <a href="">Edit Order</a>
+                <a href={{ route('new.sale.form') }}>New Order</a>
+                <a href={{ route('sale.list') }}>List Order</a>
                 <a href="">Delete Order</a>
+            </div>
+            <div class="dashboard_actions--detail">
+                <a href={{ route('new.detail.form') }}>New Order Detail</a>
+                <a href="">Edit Order Detail</a>
+                <a href="">Delete Order Detail</a>
             </div>
         </div>
     </div>
