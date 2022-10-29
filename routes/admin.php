@@ -28,8 +28,10 @@ Route::view('/new-sale-form', 'admin.create-sale')->name('new.sale.form');
 Route::post('/save-sale', [SaleController::class, 'store'])->name('sale.create');
 Route::get('/sales', [SaleController::class, 'index'])->name('sale.list');
 Route::get('/sale/{sale_id}', [SaleController::class, 'show'])->name('sale.show');
+Route::post('/sale/{sale_id}/update', [SaleController::class, 'update'])->name('sale.update');
 
 //Sale-detail routes
 
 Route::view('/new-detail-form', 'admin.create-detail')->name('new.detail.form');
 Route::post('/save-detail', [SaleDetailController::class, 'store'])->name('detail.create');
+Route::post('/detail/{detail_id}/update', [SaleDetailController::class, 'update'])->name('detail.update');

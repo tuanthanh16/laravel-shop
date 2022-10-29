@@ -7,7 +7,7 @@
     <div class="sale_container">
 
         <div class="sale_container--form">
-            <form action="" method='post'>
+            <form action={{ route('sale.update', $sale->id) }} method='post'>
 
                 @csrf
 
@@ -44,7 +44,13 @@
                         <tr>
                             <td>{{ $detail->id }}</td>
                             <td>{{ $detail->product_id }}</td>
-                            <td>{{ $detail->quantity }}</td>
+                            <td>
+                                <form action={{ route('detail.update', $detail->id) }} method='post'>
+                                    @csrf
+                                    <input name="quantity" type="number" value={{ $detail->quantity }}>
+                                    <button type="submit">Update</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
 
