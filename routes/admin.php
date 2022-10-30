@@ -29,6 +29,7 @@ Route::post('/save-sale', [SaleController::class, 'store'])->name('sale.create')
 Route::get('/sales', [SaleController::class, 'index'])->name('sale.list');
 Route::get('/sale/{sale_id}', [SaleController::class, 'show'])->name('sale.show');
 Route::post('/sale/{sale_id}/update', [SaleController::class, 'update'])->name('sale.update');
+Route::get('/sale/{sale_id}/delete', [SaleController::class, 'delete'])->name('sale.delete');
 
 //Sale-detail routes
 

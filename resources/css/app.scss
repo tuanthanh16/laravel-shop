@@ -48,23 +48,6 @@ input {
     }
 }
 
-.latest-books {
-    font-weight: 700;
-}
-.book-item {
-    h5 {
-        margin: 0;
-        font-style: italic;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: coral;
-    }
-}
-
-.publisher {
-    font-style: italic;
-    color: green;
-}
-
 .alert-error {
     padding: 10px;
     background-color: red;
@@ -125,13 +108,18 @@ td {
     border-collapse: collapse;
 }
 
-.product {
+.product,
+.sale {
     // background-color: aqua;
     margin-left: auto;
     margin-right: auto;
     width: 90vw;
     &_header {
         font-weight: 700;
+    }
+    &_sum {
+        background-color: green;
+        color: lightgreen;
     }
 }
 

@@ -16,14 +16,27 @@
             @foreach ($sales as $sale)
                 <tr>
                     <td>{{ $sale->sale_nr }}</td>
-                    <td>{{ $sale->total }}</td>
+                    <td>{{ number_format($sale->total, 2) }}</td>
                     <td>{{ $sale->status }}</td>
                     <td>{{ $sale->customer_id }}</td>
                     <td>{{ $sale->created_at }}</td>
                     <td><a href={{ route('sale.show', $sale->id) }}>Edit</a></td>
+                    <td><a href={{ route('sale.delete', $sale->id) }}>Delete</a></td>
 
                 </tr>
             @endforeach
+            <tr class="sale_sum">
+                <td>Sum</td>
+                <td>
+                    @php
+                        $sum = 0;
+                        foreach ($sales as $sale) {
+                            $sum += $sale->total;
+                        }
+                        echo number_format($sum, 2);
+                    @endphp
+                </td>
+            </tr>
         </tbody>
 
     </table>

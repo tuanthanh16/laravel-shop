@@ -25,6 +25,7 @@
 
             </form>
         @else
+            {{-- user is not login --}}
             <a href='/register'>Register</a>
             <a href="/login">Login</a>
         @endif
@@ -33,6 +34,7 @@
         @can('admin')
             <span class="navbar_admin">Welcome Admin</span>
             <a href={{ route('admin.home') }}>Admin dashboard</a>
+            {{-- search bar --}}
             <div class="navbar_search">
                 <form action={{ route('product.search') }}>
                     <div class="inner-form">
