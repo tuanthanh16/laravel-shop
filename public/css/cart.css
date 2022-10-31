@@ -85,3 +85,34 @@
 .cart-product-quantity .quantity {
     margin: 0;
 }
+
+.summary,
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.actions button {
+    background-color: green;
+    color: lightgreen;
+    border-radius: 5px;
+    width: 8rem;
+    height: 40px;
+    border: none;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.actions button:hover {
+    background-color: #1abc9c;
+    color: green;
+}
+
+.summary span {
+    margin-left: 2rem;
+    font-weight: 700;
+    font-size: 2rem;
+}

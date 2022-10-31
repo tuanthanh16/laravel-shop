@@ -73,18 +73,28 @@ class SaleController extends Controller
             ->where('status',0)
             ->first();
         if (!$sale) {
-            return 'No record found';
+            $results = null;
+            return view('index.cart', compact('results'));
         }
         //pass
         $details = $sale->details;
         // query
         $results = DB::table('sale_details')
             ->join('products','products.id', '=', 'sale_details.product_id')
-            ->select('products.name','products.price','sale_details.quantity')
+            ->select('products.name','products.price','sale_details.quantity', 'sale_details.sale_id')
             ->where('sale_details.sale_id', $sale->id)
             ->get();
         
         return view('index.cart', compact('results'));
         dd($sale);
+    }
+
+    //get method url = /order/{sale_id}
+    public function order($sale_id){
+        $sale = Sale::findOrFail($sale_id);
+        $sale->status = 1;
+        $sale->save();
+        session()->flash('success_message','Sale deleted successfully!');
+        return redirect()->route('index.home');
     }
 }

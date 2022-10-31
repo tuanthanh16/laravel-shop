@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index.index');
+Route::view('/', 'index.index')->name('index.home');
 Route::view('/about-us', 'about.about-us');
 // Route::view('/cart', 'index.cart');
 Route::get('/cart', [SaleController::class, 'intoCart']);
-
-// Route::view('/save-product', 'admin.save-product')->middleware('can:admin');
+Route::get('/order/{sale_id}', [SaleController::class, 'order'])->name('sale.order');
