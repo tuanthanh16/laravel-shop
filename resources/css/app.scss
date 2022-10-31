@@ -46,6 +46,18 @@ input {
     &_search {
         margin-left: 20px;
     }
+    i {
+        font-size: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    &_left {
+        width: 90%;
+        display: flex;
+    }
+    &_right {
+        width: 10%;
+    }
 }
 
 .alert-error {

@@ -19,7 +19,7 @@ Route::get('/list-product', [AdminProductController::class, 'index'])->name('pro
 Route::get('/single-product/{product_id}', [AdminProductController::class, 'show'])->name('product.show');
 Route::post('/single-product/{product_id}/update', [AdminProductController::class, 'update'])->name('product.update');
 Route::get('/product/{product_id}/delete', [AdminProductController::class, 'delete'])->name('product.delete');
-Route::get('/product/search', [AdminProductController::class, 'search'])->name('product.search');
+// Route::get('/product/search', [AdminProductController::class, 'search'])->name('product.search');
 Route::view('/search', 'admin.search-products')->name('search');
 
 //Sale routes

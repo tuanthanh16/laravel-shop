@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\SaleController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index.index')->name('index.home');
 Route::view('/about-us', 'about.about-us');
-// Route::view('/cart', 'index.cart');
-Route::get('/cart', [SaleController::class, 'intoCart']);
+
+Route::view('/test', 'index.test');
+
+Route::get('/cart', [SaleController::class, 'intoCart'])->name('cart');
 Route::get('/order/{sale_id}', [SaleController::class, 'order'])->name('sale.order');
+Route::get('/product/search', [AdminProductController::class, 'search'])->name('product.search');
