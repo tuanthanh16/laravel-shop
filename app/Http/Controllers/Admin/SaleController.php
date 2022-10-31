@@ -69,22 +69,28 @@ class SaleController extends Controller
     // select unpaid sale of the user -> put to cart
     public function intoCart(){
         $user = auth()->user();
-        $sale = Sale::where('customer_id','=',$user->id)
-            ->where('status',0)
-            ->first();
-        if (!$sale) {
+        if ($user) {
+            $sale = Sale::where('customer_id','=',$user->id)
+                ->where('status',0)
+                ->first();
+            if (!$sale) {
+                $results = null;
+                // return view('index.cart', compact('results'));
+            } else {
+            // sale has been found
+            $details = $sale->details;
+            // query
+            $results = DB::table('sale_details')
+                ->join('products','products.id', '=', 'sale_details.product_id')
+                ->select('products.name','products.price','sale_details.quantity', 'sale_details.sale_id')
+                ->where('sale_details.sale_id', $sale->id)
+                ->get();
+            }
+            
+        } else {
+            // $user not login
             $results = null;
-            return view('index.cart', compact('results'));
         }
-        //pass
-        $details = $sale->details;
-        // query
-        $results = DB::table('sale_details')
-            ->join('products','products.id', '=', 'sale_details.product_id')
-            ->select('products.name','products.price','sale_details.quantity', 'sale_details.sale_id')
-            ->where('sale_details.sale_id', $sale->id)
-            ->get();
-        
         return view('index.cart', compact('results'));
         dd($sale);
     }
