@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Sale;
+use App\Models\SaleDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SaleController extends Controller
 {
@@ -64,4 +66,25 @@ class SaleController extends Controller
         return redirect()->route('admin.home');
     }
 
+    // select unpaid sale of the user -> put to cart
+    public function intoCart(){
+        $user = auth()->user();
+        $sale = Sale::where('customer_id','=',$user->id)
+            ->where('status',0)
+            ->first();
+        if (!$sale) {
+            return 'No record found';
+        }
+        //pass
+        $details = $sale->details;
+        // query
+        $results = DB::table('sale_details')
+            ->join('products','products.id', '=', 'sale_details.product_id')
+            ->select('products.name','products.price','sale_details.quantity')
+            ->where('sale_details.sale_id', $sale->id)
+            ->get();
+        
+        return view('index.cart', compact('results'));
+        dd($sale);
+    }
 }

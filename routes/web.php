@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SaleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index.index');
 Route::view('/about-us', 'about.about-us');
+// Route::view('/cart', 'index.cart');
+Route::get('/cart', [SaleController::class, 'intoCart']);
+
 // Route::view('/save-product', 'admin.save-product')->middleware('can:admin');
