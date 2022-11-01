@@ -7,17 +7,18 @@
             <div class="error">{{ $error }}</div>
         @endforeach
     @endif
-    <form action="{{ route('login') }}" method="post">
+    <div class="login-form">
+        <form action="{{ route('login') }}" method="post">
 
-        @csrf
-        <label>Email</label><br>
-        <input name="email" type="email" value="{{ old('email') }}"><br>
+            @csrf
+            <label>Email</label><br>
+            <input name="email" type="email" value="{{ old('email') }}"><br>
 
-        <label>Password</label><br>
-        <input name="password" type="password" value=""><br>
+            <label>Password</label><br>
+            <input name="password" type="password" value=""><br>
 
-        <button>Login</button>
+            <button class="btn-login">Login</button>
 
-    </form>
-
+        </form>
+    </div>
 @endsection

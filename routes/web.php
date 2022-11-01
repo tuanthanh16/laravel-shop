@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 Route::view('/', 'index.index')->name('index.home');
 Route::view('/about-us', 'about.about-us');
 
+//this route is for the testing purpose
 Route::view('/test', 'index.test');
 
 Route::get('/cart', [SaleController::class, 'intoCart'])->name('cart');

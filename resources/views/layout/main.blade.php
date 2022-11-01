@@ -10,6 +10,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
 
     @vite('resources/css/app.scss')
+    @vite('resources/css/bootstrap.css')
+    @vite('resources/css/cart.css')
 </head>
 
 <body>
@@ -21,7 +23,7 @@
             <div class="navbar_search">
                 <form action={{ route('product.search') }}>
                     <div class="inner-form">
-                        <div class="input-field first-wrap">
+                        <div class="first-wrap">
                             <div class="input-select">
                                 <select data-trigger="" name="category">
                                     <option placeholder="">Category</option>
@@ -31,12 +33,12 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="input-field second-wrap">
+                        <div class="second-wrap">
                             <input name="keyword" placeholder="Enter Keywords?" type="text" />
                         </div>
-                        <div class="input-field third-wrap">
+                        <div class="third-wrap">
                             <button class="btn-search" type="submit">
-                                Search
+                                <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </div>
                     </div>

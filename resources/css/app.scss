@@ -8,11 +8,27 @@ body {
     // color: green;
     font-size: 1.5rem;
 }
-
-input {
-    // padding-top: 5px;
-    // padding-bottom: 5px;
-    padding: 5px;
+// login form
+.login-form {
+    margin: auto;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    .btn-login {
+        margin-top: 10px;
+        margin-left: 10px;
+        border: none;
+        border-radius: 5px;
+        width: 8rem;
+    }
+    input,
+    label {
+        // padding-top: 5px;
+        // padding-bottom: 5px;
+        padding: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 .navbar {
@@ -45,6 +61,14 @@ input {
     }
     &_search {
         margin-left: 20px;
+        .inner-form {
+            display: flex;
+            align-items: center;
+            .third-wrap button {
+                border: none;
+                background-color: aliceblue;
+            }
+        }
     }
     i {
         font-size: 30px;
@@ -54,6 +78,8 @@ input {
     &_left {
         width: 90%;
         display: flex;
+        flex-direction: row;
+        align-items: center;
     }
     &_right {
         width: 10%;
@@ -113,12 +139,6 @@ input {
 }
 
 // this is for product list
-table,
-th,
-td {
-    border: 1px solid;
-    border-collapse: collapse;
-}
 
 .product,
 .sale {
@@ -132,6 +152,10 @@ td {
     &_sum {
         background-color: green;
         color: lightgreen;
+    }
+    td {
+        border: 1px solid;
+        border-collapse: collapse;
     }
 }
 

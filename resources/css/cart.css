@@ -1,0 +1,118 @@
+.quantity {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    justify-content: center;
+    align-items: stretch;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 30px;
+}
+.quantity input[type="number"]::-webkit-inner-spin-button,
+.quantity input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+.quantity .qty {
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    border: 0;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    background-color: #eee;
+    text-align: center;
+    margin-bottom: 0;
+}
+.quantity .minus,
+.quantity .plus {
+    display: block;
+    cursor: pointer;
+    border: 0 transparent;
+    padding: 0;
+    width: 36px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #eee;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.2s linear;
+    -webkit-transition: background-color 0.2s linear;
+    -o-transition: background-color 0.2s linear;
+}
+.quantity .minus:hover,
+.quantity .plus:hover {
+    background-color: #ddd;
+}
+.quantity .minus:focus,
+.quantity .plus:focus,
+.quantity .qty:focus {
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+.cart-product-thumbnail a {
+    display: block;
+    width: 68px;
+}
+.cart-product-thumbnail img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    border: 2px solid #eee;
+}
+.cart-product-thumbnail img:hover {
+    border-color: #1abc9c;
+}
+.cart-product-name a,
+.product-name a {
+    font-weight: 700;
+    font-size: 15px;
+    color: #333;
+}
+.cart-product-name a:hover,
+.product-name a:hover {
+    color: #666;
+}
+
+.cart-product-price,
+.cart-product-quantity,
+.cart-product-subtotal {
+    text-align: center !important;
+}
+.cart-product-quantity .quantity {
+    margin: 0;
+}
+
+.summary,
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.actions button {
+    background-color: green;
+    color: lightgreen;
+    border-radius: 5px;
+    width: 8rem;
+    height: 40px;
+    border: none;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.actions button:hover {
+    background-color: #1abc9c;
+    color: green;
+}
+
+.summary span {
+    margin-left: 2rem;
+    font-weight: 700;
+    font-size: 2rem;
+}

@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/cart.css') }}" rel="stylesheet">
+{{-- <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/cart.css') }}" rel="stylesheet"> --}}
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
 
-    <title>Your Cart</title>
-</head>
+@section('content')
 
-<body>
+
     @if (isset($results))
-
         <table class="table cart mb-5">
             <thead>
                 <tr>
@@ -32,8 +23,7 @@
                 @foreach ($results as $result)
                     <tr class="cart_item">
                         <td class="cart-product-remove">
-                            <a class="remove" href="#" title="Remove this item"><i
-                                    class="fa-solid fa-trash"></i></a>
+                            <a class="remove" href="#" title="Remove this item"><i class="fa-solid fa-trash"></i></a>
                         </td>
                         <td class="cart-product-thumbnail">
                             {{-- <a href="#"><img alt="Product 1" height="64"
@@ -107,6 +97,4 @@
     @else
         <h2>Your cart is empty, please create an order!!!</h2>
     @endif
-</body>
-
-</html>
+@endsection
