@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -33,10 +34,10 @@ class ProductController extends Controller
         return view('admin.list-product', compact('products'));
     }
 
+    //route /admin/single-product/{product_id}
     public function show($product_id){
         $product = Product::findOrFail($product_id);
         
-        // dd($product);
         return view('admin.single-product', compact('product'));
     }
 
