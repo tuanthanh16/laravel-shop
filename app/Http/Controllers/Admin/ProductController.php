@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    //post method, url admin/save-product
+    // save product
+    // post method, url admin/save-product
     public function store(Request $request){
         //validation
         $request->validate([
