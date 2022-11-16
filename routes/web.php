@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\SaleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,6 @@ Route::view('/test', 'index.test');
 Route::get('/cart', [SaleController::class, 'intoCart'])->name('cart');
 Route::get('/order/{sale_id}', [SaleController::class, 'order'])->name('sale.order');
 Route::get('/product/search', [AdminProductController::class, 'search'])->name('product.search');
+
+
+Route::get('/user', [UserController::class,'getAuthUser']);

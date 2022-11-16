@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,7 @@ Route::get('/search-products',[ProductController::class, 'search'])->name('api.s
 
 
 Route::get('/list-categories',[CategoryController::class, 'index'])->name('api.list-categories');
+
+// these routes are for login from SPA
+// Route::post('/login',[LoginController::class, 'login']);
+// Route::post('/logout',[LoginController::class, 'logout']);
