@@ -5,7 +5,7 @@ import { useContext, useRef } from "react";
 import UserContext from "./UserContext";
 
 const LoginForm = () => {
-    const { user, setUser } = useContext(UserContext);
+    const { setUser } = useContext(UserContext);
     const navigate = useNavigate();
     // ----code-----
     const handleSubmit = async (e) => {

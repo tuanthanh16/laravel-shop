@@ -7,9 +7,9 @@ import ContactUs from "../Pages/ContactUs";
 import AboutUs from "../Pages/AboutUs";
 import Home from "../Pages/Home.jsx";
 import CartContext from "./CartContext";
+import UserContext from "./user/UserContext";
 import { useEffect, useState } from "react";
 import LoginForm from "./user/LoginForm";
-import UserContext from "./user/UserContext";
 import Register from "./user/Register";
 import { loadUser } from "./user/actions/auth";
 
