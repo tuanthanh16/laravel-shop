@@ -65,7 +65,7 @@ const Card = ({ product }) => {
                     <div className="d-flex justify-content-between">
                         <h5 className="card-title">{product.name}</h5>
                         <span className="fw-bolder">Price: {product.price}</span>
-                        <span className="fw-bolder">In stock: {product.stock}</span>
+                        {/* <span className="fw-bolder">In stock: {product.stock}</span> */}
                     </div>
                     <div className="">
                         <p className="card-text">{product.description}</p>
