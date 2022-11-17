@@ -12,7 +12,7 @@ const Card = ({ product }) => {
 
     const { cart, setCart } = useContext(CartContext)
 
-    const addToCart = (productId) => {
+    const addToCart = (productId, amount) => {
         const newCart = [...cart]
         let alreadyInCart = false
         newCart.forEach((product) => {
@@ -20,16 +20,17 @@ const Card = ({ product }) => {
             console.log(productId);
             if (product.id == productId) {
                 alreadyInCart = true
-                product.qty++
+                product.qty += amount
             }
         })
         if (!alreadyInCart) {
             newCart.push({
                 id: product.id,
-                qty: 1,
+                qty: amount,
             })
         }
         setCart(newCart)
+        setAmount(1)
     }
 
 
@@ -83,7 +84,7 @@ const Card = ({ product }) => {
                 <div className="d-flex  justify-content-end mt-4">
                     <div className="d-flex align-items-center justify-content-center">
                         <button className="btn btn-sm btn-outline-success" onClick={() => {
-                            addToCart(product.id)
+                            addToCart(product.id, amount)
                         }}>Add to Cart</button>
                     </div>
                 </div>

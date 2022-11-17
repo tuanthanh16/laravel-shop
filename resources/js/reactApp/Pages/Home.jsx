@@ -1,6 +1,7 @@
 import Card from '../components/Card';
 import { useState, useEffect, useContext } from 'react';
 import "../../../css/app.css";
+import CartContext from '../components/CartContext';
 
 
 const Home = () => {
