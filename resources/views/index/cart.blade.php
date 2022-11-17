@@ -74,7 +74,7 @@
             </tbody>
         </table>
         <div class="summary">
-            <span>Sum</span>
+            <span>Total:</span>
             <span>
                 @php
                     $sum = 0;
