@@ -8,7 +8,7 @@ const Footer = () => {
         <div className='container' style={{ marginTop: '4rem' }}>
             <div className='row'>
                 {/* Column1 */}
-                <div className="col-12 col-md-3">
+                <div className="col-12 col-md-4">
                     <img src={logo} alt="logo" className='logo-footer' />
                 </div>
                 <div className='col-12 col-md-3'>
@@ -22,7 +22,7 @@ const Footer = () => {
                 {/* COlumn2 */}
                 <div className='col-12 col-md-3'>
                     <h4>Contact</h4>
-                    <ul className='footer-box ps-2'>
+                    <ul className='footer-box ps-3'>
                         <li>Address:</li>
                         <li>Branická 44</li>
                         <li>147 00 Praha 4</li>
@@ -32,7 +32,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 {/* COlumn2 */}
-                <div className='col-12 col-md-3'>
+                <div className='col-12 col-md-2'>
                     <h4>Follow us</h4>
                     <div className='d-flex justify-content-around'>
 
