@@ -44,9 +44,9 @@ function Navbar() {
                         }`}
                     >
                         <div className="row d-flex align-items-center">
-                            <a className="col-12 col-md-2" href="/">
+                            <Link className="col-12 col-md-2" to="/">
                                 Home
-                            </a>
+                            </Link>
                             <Link className="col-12 col-md-2" to="/register">
                                 Register
                             </Link>
