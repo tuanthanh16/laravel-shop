@@ -15,12 +15,14 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 |
 */
 
-Route::view('/', 'index.index')->name('index.home');
-Route::view('/about-us', 'about.about-us');
+// Route::view('/', 'index.index')->name('index.home');
+// Route::view('/about-us', 'about.about-us');
 
-//this route is for the testing purpose
-Route::view('/test', 'index.test');
+// //this route is for the testing purpose
+// Route::view('/test', 'index.test');
 
-Route::get('/cart', [SaleController::class, 'intoCart'])->name('cart');
-Route::get('/order/{sale_id}', [SaleController::class, 'order'])->name('sale.order');
-Route::get('/product/search', [AdminProductController::class, 'search'])->name('product.search');
+// Route::get('/cart', [SaleController::class, 'intoCart'])->name('cart');
+// Route::get('/order/{sale_id}', [SaleController::class, 'order'])->name('sale.order');
+// Route::get('/product/search', [AdminProductController::class, 'search'])->name('product.search');
+
+Route::view('/{path?}', 'reactApp/index')->where('path', '.*')->name('shop.app');

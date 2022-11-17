@@ -10,6 +10,7 @@ export default defineConfig({
                 "resources/js/app.js",
                 "resources/css/bootstrap.css",
                 "resources/css/cart.css",
+                "resources/js/shop.jsx",
             ],
             refresh: true,
         }),
