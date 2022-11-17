@@ -1,0 +1,12 @@
+.footer-box {
+    list-style: none;
+    margin-top: 2em;
+}
+
+.logo-footer {
+    height: 110px;
+}
+
+a:link {
+    color: #00B5A2;
+}

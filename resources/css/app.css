@@ -1,0 +1,171 @@
+.App {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    font-family: 'Quattrocento Sans', sans-serif !important;
+    font-weight: bold;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold !important;
+}
+
+h4 {
+    font-size: 1.2rem !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: initial !important;
+}
+
+a:hover {
+    color: #00B5A2 !important;
+}
+
+.navbar {
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+
+}
+
+.navbar .leftSide {
+    flex: 30%;
+    display: flex;
+    align-items: center;
+    justify-items: left;
+    padding-left: 25px;
+
+}
+
+.leftSide input {
+    width: 220px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    border: 1px solid grey;
+    font-size: 15px;
+    padding-right: 15px;
+    color: black;
+}
+
+.leftSide button {
+    height: 32px;
+    width: 70px;
+    font-size: 16px;
+}
+
+.navbar .rightSide {
+    flex: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+
+}
+
+.navbar .rightSide .links {
+    max-height: 80px;
+}
+
+.navbar .rightSide .links a {
+    text-decoration: none;
+    color: grey;
+    font-size: 15px;
+    margin-right: 15px;
+}
+
+.navbar .rightSide button {
+    display: none;
+}
+
+@media only screen and (max-width: 880px) {
+    .navbar .rightSide .links a {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .navbar .rightSide .links a {
+        font-size: 15px;
+    }
+
+    .container.border {
+        font-size: 20px;
+
+
+    }
+}
+
+.thumbnail {
+    background-color: black;
+    width: 100%;
+    height: 200px;
+    display: inline-block;
+    /* makes it fit in like an <img> */
+    background-size: cover;
+    /* or contain */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.search-input {
+    width: 100%;
+    height: 38px;
+    margin: 0;
+    border: 1px solid #00B5A2;
+    border-radius: 0.375rem;
+}
+
+.search-input.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #00B5A2;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #CADFD9;
+}
+
+/* enable absolute positioning */
+.search-form-group {
+    position: relative;
+}
+
+/* style icon */
+.search-form-group .bi {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align icon */
+.search-form-group .bi {
+    left: 0px;
+    bottom: -2px;
+}
+
+/* add padding  */
+.search-form-group input {
+    padding-left: 35px;
+}

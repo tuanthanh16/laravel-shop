@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Cart from './Cart';
-import "./Navbar.css";
+import "../../../css/Navbar.css";
 import { Container } from 'react-bootstrap';
-
+import logo from "../../images/background-imgs/balkan.png";
 import Search from './Search';
+
 function Navbar() {
 
     const [showLinks, setShowLinks] = useState(false);
@@ -14,7 +15,7 @@ function Navbar() {
 
                 <div className='row d-flex align-items-center'>
                     <div className="col-md-2">
-                        LOGO
+                        <img src={logo} alt="logo" className='logo-navbar' />
                     </div>
                     <div className="col-9 col-md-3">
                         <Search />

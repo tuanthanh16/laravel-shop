@@ -1,6 +1,7 @@
 import Card from '../components/Card';
 import { useState, useEffect, useContext } from 'react';
-import CartContext from '../components/CartContext';
+import "../../../css/app.css";
+
 
 const Home = () => {
     const { cart, setCart } = useContext(CartContext)
@@ -10,7 +11,7 @@ const Home = () => {
 
     const loadProductsData = async () => {
 
-        const response = await fetch('http://laravel-shop.test/api/list-products')
+        const response = await fetch('/api/list-products')
 
         const data = await response.json();
 
