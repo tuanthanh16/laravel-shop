@@ -1,14 +1,11 @@
-import React, { useState } from "react";
-import Cart from "./Cart";
+import React, { useContext, useState } from "react";
 import "../../../css/Navbar.css";
 import { Container } from "react-bootstrap";
 import logo from "../../images/background-imgs/balkan.png";
 import Search from "./Search";
-import React, { useContext, useState } from "react";
 import axios from "axios";
 import Cart from "./Cart";
-import "./Navbar.css";
-import Search from "./Search";
+// import "./Navbar.css";
 import { Link } from "react-router-dom";
 import UserContext from "./user/UserContext";
 
