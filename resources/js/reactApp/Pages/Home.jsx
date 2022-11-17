@@ -1,9 +1,9 @@
 import Card from '../components/Card';
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect, useContext } from 'react';
+import CartContext from '../components/CartContext';
 
 const Home = () => {
-
+    const { cart, setCart } = useContext(CartContext)
 
     // fetching data from API endpoint (products)
     const [productsData, setProductsData] = useState([])
@@ -40,6 +40,14 @@ const Home = () => {
                     }
                     {/*  */}
 
+                </div>
+
+                <div>
+                    {cart.map((cartItem) => {
+                        return (
+                            <p>ID: {cartItem.id}, qty: {cartItem.qty}</p>
+                        )
+                    })}
                 </div>
             </div>
         </div>
