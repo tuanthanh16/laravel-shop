@@ -1,4 +1,10 @@
 .Navbar {
     background-color: aliceblue;
-    padding: .7rem 0;
+    padding: 0.7rem 0;
+}
+
+.btn-logout {
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
