@@ -1,6 +1,10 @@
-import { Routes, Route } from "react-router-dom";
+
+import { Routes, Route, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../../../css/app.css";
+import "@fortawesome/react-fontawesome";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ContactUs from "../Pages/ContactUs";
@@ -14,6 +18,7 @@ import Register from "./user/Register";
 import { loadUser } from "./user/actions/auth";
 
 export default function App() {
+    const location = useLocation();
     const [cart, setCart] = useState([]);
     const [user, setUser] = useState(null);
     const getUser = async () => {
@@ -41,10 +46,10 @@ export default function App() {
                             <Route path="/login" element={<LoginForm />} />
                             <Route path="/register" element={<Register />} />
                         </Routes>
-                        <Footer />
+                    {location.pathname !== '/contact-us' && <Footer />}
                     </div>
                 </CartContext.Provider>
             </UserContext.Provider>
         </>
-    );
+  );
 }

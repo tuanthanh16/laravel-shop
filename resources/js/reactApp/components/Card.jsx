@@ -34,9 +34,6 @@ const Card = ({ product }) => {
     }
 
 
-
-
-
     // increment and decrement button for quanity
 
     const [amount, setAmount] = useState(1)
@@ -62,8 +59,8 @@ const Card = ({ product }) => {
     return (
         < div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4" >
             <div className="card h-100 shadow rounded">
-                {/* <div class="thumbnail" style={{ backgroundImage: `url(${product.img})` }}></div> */}
-                <img src={product.img} alt="" className="card-img-top" />
+                <div class="thumbnail" style={{ backgroundImage: `url(${"/product_images/" + product.image + ".png"})` }}></div>
+                {/* <img src={"/product_images/" + product.image + ".png"} alt="" className="card-img-top " /> */}
                 <div className="card-body">
                     <div className="d-flex justify-content-between">
                         <h5 className="card-title">{product.name}</h5>
