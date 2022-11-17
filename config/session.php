@@ -155,7 +155,8 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
+    // 'domain' => env('SESSION_DOMAIN'),
+    'domain' => '.laravel-shop.test',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,6 +170,7 @@ return [
     */
 
     'secure' => env('SESSION_SECURE_COOKIE'),
+    // 'secure' => false,
 
     /*
     |--------------------------------------------------------------------------

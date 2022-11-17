@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\SaleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 // Route::get('/product/search', [AdminProductController::class, 'search'])->name('product.search');
 
 Route::view('/{path?}', 'reactApp/index')->where('path', '.*')->name('shop.app');
+Route::get('/user', [UserController::class, 'getAuthUser']);
