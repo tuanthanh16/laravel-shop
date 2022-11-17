@@ -1,5 +1,7 @@
 import Card from '../components/Card';
 import { useState, useEffect } from 'react';
+import "../../../css/app.css";
+
 
 
 const Home = () => {
@@ -10,7 +12,7 @@ const Home = () => {
 
     const loadProductsData = async () => {
 
-        const response = await fetch('http://laravel-shop.test/api/list-products')
+        const response = await fetch('/api/list-products')
 
         const data = await response.json();
 
