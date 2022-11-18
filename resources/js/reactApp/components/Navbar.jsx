@@ -39,13 +39,15 @@ function Navbar() {
                         </button>
                     </div>
                     <div
-                        className={`col-12 col-md-7 links d-md-block ${
-                            showLinks ? "" : "d-none"
-                        }`}
+                        className={`col-12 col-md-7 links d-md-block ${showLinks ? "" : "d-none"
+                            }`}
                     >
                         <div className="row d-flex align-items-center">
                             <a className="col-12 col-md-2" href="/">
                                 Home
+                            </a>
+                            <a className="col-12 col-md-2" href="/store">
+                                Store
                             </a>
                             <Link className="col-12 col-md-2" to="/register">
                                 Register

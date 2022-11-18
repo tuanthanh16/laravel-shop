@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import LoginForm from "./user/LoginForm";
 import Register from "./user/Register";
 import { loadUser } from "./user/actions/auth";
+import Store from "../Pages/Store";
 
 export default function App() {
     const location = useLocation();
@@ -41,15 +42,16 @@ export default function App() {
                         <Navbar />
                         <Routes>
                             <Route path="/" element={<Home />} />
+                            <Route path="/store" element={<Store />} />
                             <Route path="/about-us" element={<AboutUs />} />
                             <Route path="/contact-us" element={<ContactUs />} />
                             <Route path="/login" element={<LoginForm />} />
                             <Route path="/register" element={<Register />} />
                         </Routes>
-                    {location.pathname !== '/contact-us' && <Footer />}
+                        {location.pathname !== '/contact-us' && <Footer />}
                     </div>
                 </CartContext.Provider>
             </UserContext.Provider>
         </>
-  );
+    );
 }

@@ -12,7 +12,7 @@ export default function Cart() {
 
 
         <Button style={{
-            width: '3rem', height: '3rem', position: 'relative', color: 'green', margin: '0em 0em 0em 7em'
+            width: '3rem', height: '3rem', position: 'relative', color: 'green', margin: '0em 0em 0em 3em'
         }}
             variant='outline-primary'
             className='rounded-circle col-12 col-md-4' >

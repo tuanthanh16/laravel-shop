@@ -36,9 +36,9 @@ const Footer = () => {
                     <h4>Follow us</h4>
                     <div className='d-flex justify-content-around'>
 
-                        <a href="#"><i class='bi bi-facebook'></i></a>
-                        <a href="#"><i class='bi bi-twitter'></i></a>
-                        <a href="/#"><i class='bi bi-instagram'></i></a>
+                        <a href="#"><i className='bi bi-facebook'></i></a>
+                        <a href="#"><i className='bi bi-twitter'></i></a>
+                        <a href="/#"><i className='bi bi-instagram'></i></a>
 
                     </div>
 

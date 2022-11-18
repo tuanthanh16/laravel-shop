@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import CartContext from "./CartContext";
 
 
-const Card = ({ product }) => {
+const ProductCard = ({ product }) => {
 
 
 
@@ -16,8 +16,8 @@ const Card = ({ product }) => {
         const newCart = [...cart]
         let alreadyInCart = false
         newCart.forEach((product) => {
-            console.log(product.id);
-            console.log(productId);
+            // console.log(product.id);
+            // console.log(productId);
             if (product.id == productId) {
                 alreadyInCart = true
                 product.qty += amount
@@ -54,12 +54,12 @@ const Card = ({ product }) => {
         //###REDUCER    dispatch({ type: "decrement" })
     }
 
-    console.log(cart)
+    if (typeof product == undefined) { console.log("WTF") }
 
     return (
         < div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4" >
             <div className="card h-100 shadow rounded">
-                <div class="thumbnail" style={{ backgroundImage: `url(${"/product_images/" + product.image + ".png"})` }}></div>
+                <div className="thumbnail" style={{ backgroundImage: `url(${"/product_images/" + product.image + ".png"})` }}></div>
                 {/* <img src={"/product_images/" + product.image + ".png"} alt="" className="card-img-top " /> */}
                 <div className="card-body">
                     <div className="d-flex justify-content-between">
@@ -90,7 +90,7 @@ const Card = ({ product }) => {
     )
 }
 
-export default Card
+export default ProductCard
 
 
 
