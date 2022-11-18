@@ -9,7 +9,6 @@ export default function Cart() {
     // console.log(totalItems);
     const handleClick = (e) => {
         e.preventDefault();
-        console.log("cart click");
         navigate("/cart");
     };
     return (

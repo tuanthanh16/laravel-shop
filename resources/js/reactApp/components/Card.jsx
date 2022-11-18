@@ -21,6 +21,9 @@ const Card = ({ product }) => {
         if (!alreadyInCart) {
             newCart.push({
                 id: product.id,
+                name: product.name,
+                price: product.price,
+                stock: product.stock,
                 qty: amount,
             });
         }
