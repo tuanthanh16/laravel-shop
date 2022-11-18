@@ -18,8 +18,10 @@ class LoginController extends Controller
         if (! Auth::attempt($login)) {
             throw ValidationException::withMessages(['error']);
         }
-
-        return $request->user();
+        $user = Auth::user();
+        $token = $user->createToken('auth_token')->plainTextToken;
+        return [$user, $token];
+        // return $request->user();
     }
 
     public function logout() {

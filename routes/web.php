@@ -26,5 +26,5 @@ use App\Http\Controllers\UserController;
 // Route::get('/order/{sale_id}', [SaleController::class, 'order'])->name('sale.order');
 // Route::get('/product/search', [AdminProductController::class, 'search'])->name('product.search');
 
-Route::view('/{path?}', 'reactApp/index')->where('path', '.*')->name('shop.app');
 Route::get('/user', [UserController::class, 'getAuthUser']);
+Route::view('/{path?}', 'reactApp/index')->where('path', '.*')->name('shop.app');
