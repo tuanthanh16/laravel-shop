@@ -2,11 +2,10 @@ import ProductCard from '../components/ProductCard';
 import CategoryCard from '../components/CategoryCard';
 import { useState, useEffect, useContext } from 'react';
 import "../../../css/app.css";
-import CartContext from '../components/CartContext';
-
+import CartContext from "../components/CartContext";
 
 const Home = () => {
-    const { cart, setCart } = useContext(CartContext)
+    const { cart, setCart } = useContext(CartContext);
 
 
     //fetching data from API - endpoint(categories)
@@ -58,4 +57,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;
