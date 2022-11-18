@@ -1,6 +1,7 @@
 import ProductCard from '../components/ProductCard';
 import CategoryCard from '../components/CategoryCard';
 import { useState, useEffect, useContext } from 'react';
+import { useParams } from 'react-router-dom'
 import "../../../css/app.css";
 import CartContext from '../components/CartContext';
 
@@ -10,10 +11,19 @@ const Store = () => {
 
     // fetching data from API endpoint (products)
     const [productsData, setProductsData] = useState([])
+    const { categoryId } = useParams()
 
     const loadProductsData = async () => {
 
-        const response = await fetch('/api/list-products')
+        let url = ''
+
+        if(categoryId) {
+            url = '/api/products/' + categoryId
+        } else {
+            url = '/api/list-products'
+        }
+
+        const response = await fetch(url)
 
         const data = await response.json();
 

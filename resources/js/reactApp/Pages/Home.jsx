@@ -38,7 +38,7 @@ const Home = () => {
                             categoriesData ?
                                 categoriesData.map((category) => {
                                     return (
-                                        <CategoryCard category={category} key={category.id} />
+                                      <CategoryCard category={category} key={category.id} />
                                     )
                                 })
                                 :

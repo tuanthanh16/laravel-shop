@@ -23,13 +23,14 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Product class
-Route::get('/list-products',[ProductController::class, 'index'])->name('api.list-products');
-Route::get('/search-products',[ProductController::class, 'search'])->name('api.search-products');
+Route::get('/list-products', [ProductController::class, 'index'])->name('api.list-products');
+Route::get('/search-products', [ProductController::class, 'search'])->name('api.search-products');
 
 
-Route::get('/list-categories',[CategoryController::class, 'index'])->name('api.list-categories');
+Route::get('/list-categories', [CategoryController::class, 'index'])->name('api.list-categories');
+Route::get('/products/{category_id}', [ProductController::class, 'getProductsByCategory'])->name('api.get-products-category');
 // Route::get('/user', [UserController::class, 'getAuthUser']);
 
 // these routes are for login from SPA
-Route::post('/login',[LoginController::class, 'login']);
-Route::post('/logout',[LoginController::class, 'logout']);
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout']);
