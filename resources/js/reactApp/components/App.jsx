@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import LoginForm from "./user/LoginForm";
 import Register from "./user/Register";
 import { loadUser } from "./user/actions/auth";
+import CartBox from "./cart/CartBox";
 
 export default function App() {
     const location = useLocation();
@@ -45,6 +46,7 @@ export default function App() {
                             <Route path="/contact-us" element={<ContactUs />} />
                             <Route path="/login" element={<LoginForm />} />
                             <Route path="/register" element={<Register />} />
+                            <Route path="/cart" element={<CartBox />} />
                         </Routes>
                     {location.pathname !== '/contact-us' && <Footer />}
                     </div>
