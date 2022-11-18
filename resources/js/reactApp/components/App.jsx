@@ -4,11 +4,11 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../../../css/app.css";
 import "@fortawesome/react-fontawesome";
+import CarouselContainer from "./Carousel";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ContactUs from "../Pages/ContactUs";
 import AboutUs from "../Pages/AboutUs";
-import CarouselContainer from "./Carousel";
 import Home from "../Pages/Home.jsx";
 import CartContext from "./CartContext";
 import UserContext from "./user/UserContext";
@@ -42,6 +42,10 @@ export default function App() {
                 <CartContext.Provider value={{ cart, setCart }}>
                     <div className="App">
                         <Navbar />
+                        {location.pathname == "/" && <CarouselContainer />}
+                        {location.pathname == "/store" && <CarouselContainer />}
+
+                        
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/store" element={<Store />} />
@@ -52,6 +56,7 @@ export default function App() {
                             <Route path="/cart" element={<CartBox />} />
                         </Routes>
                         {location.pathname !== "/contact-us" && <Footer />}
+                        
                     </div>
                 </CartContext.Provider>
             </UserContext.Provider>

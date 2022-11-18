@@ -16,7 +16,7 @@ const AboutUs = () => {
                                     <i className="bi bi-globe-americas"></i>
                                     <h3>MISSION</h3>
                                     <hr />
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                    <p>Our mission is to be a leader in the distribution and merchandising of food from the sunny Balkan directly to your table. We forge relationships with farmers who grow food in a natural way. </p>
 
 
                                 </div>

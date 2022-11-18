@@ -3,7 +3,7 @@ import {Carousel} from "react-bootstrap";
 
 const CarouselContainer = () => {
     return (
-        <Carousel interval={3000}>
+        <Carousel interval={2000}>
             <Carousel.Item>
                 <img
                 className="d-block w-100"   
@@ -11,19 +11,30 @@ const CarouselContainer = () => {
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <h3>Bringing the Balkan closer to you</h3>
+                
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
                 className="d-block w-100 "
-                src={"/carousel_images/slider2.jpg"}
+                src={"/carousel_images/slider5.jpg"}
                 alt="Second slide"
                 />
                 <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3>We believe in real food</h3>
+                <p>Always eat what's right.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                className="d-block w-100 "
+                src={"/carousel_images/slider3.jpg"}
+                alt="Second slide"
+                />
+                <Carousel.Caption>
+                <h3>Food that tells a story.</h3>
+                <p>Come and taste the Balkan delish!</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
