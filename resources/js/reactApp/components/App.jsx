@@ -9,6 +9,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ContactUs from "../Pages/ContactUs";
 import AboutUs from "../Pages/AboutUs";
+import CarouselContainer from "./Carousel";
 import Home from "../Pages/Home.jsx";
 import CartContext from "./CartContext";
 import { useState } from "react";
@@ -24,6 +25,7 @@ const [cart, setCart] = useState([])
       <CartContext.Provider value={{ cart, setCart }}>
         <div className="App">
           <Navbar />
+          <CarouselContainer />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about-us' element={<AboutUs />} />
