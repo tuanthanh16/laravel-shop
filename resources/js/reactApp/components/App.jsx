@@ -1,4 +1,3 @@
-
 import { Routes, Route, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -21,14 +20,15 @@ import CartBox from "./cart/CartBox";
 export default function App() {
     const location = useLocation();
     const [cart, setCart] = useState([]);
-    const [user, setUser] = useState(null);
+    const guestUser = [{ id: -100, name: "Guest" }, { token: null }];
+    const [user, setUser] = useState(guestUser);
     const getUser = async () => {
-        const user = await loadUser();
-        if (user) {
-            setUser(user);
-            console.log(`user ${user} had logged in`);
+        const logUser = await loadUser();
+        if (logUser) {
+            setUser(logUser);
+            console.log(`user ${logUser} had logged in`);
         } else {
-            console.log("No user had been logged");
+            console.log("user not found");
         }
     };
     useEffect(() => {
@@ -48,10 +48,10 @@ export default function App() {
                             <Route path="/register" element={<Register />} />
                             <Route path="/cart" element={<CartBox />} />
                         </Routes>
-                    {location.pathname !== '/contact-us' && <Footer />}
+                        {location.pathname !== "/contact-us" && <Footer />}
                     </div>
                 </CartContext.Provider>
             </UserContext.Provider>
         </>
-  );
+    );
 }
