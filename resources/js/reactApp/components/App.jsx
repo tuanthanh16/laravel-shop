@@ -16,6 +16,7 @@ import LoginForm from "./user/LoginForm";
 import Register from "./user/Register";
 import { loadUser } from "./user/actions/auth";
 import CartBox from "./cart/CartBox";
+import Checkout from "./cart/Checkout";
 
 export default function App() {
     const location = useLocation();
@@ -47,6 +48,7 @@ export default function App() {
                             <Route path="/login" element={<LoginForm />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/cart" element={<CartBox />} />
+                            <Route path="/checkout" element={<Checkout />} />
                         </Routes>
                         {location.pathname !== "/contact-us" && <Footer />}
                     </div>

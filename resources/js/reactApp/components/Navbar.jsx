@@ -57,19 +57,10 @@ function Navbar() {
                                     Login
                                 </Link>
                             )}
-                            {user[0].id != -100 && (
-                                <button
-                                    className="btn-logout col-12 col-md-2"
-                                    onClick={logout}
-                                >
-                                    Logout
-                                </button>
-                            )}
                             <a className="col-12 col-md-2" href="/contacts">
                                 Contacts
                             </a>
 
-                            {/* <Cart /> */}
                             {/* Right box */}
                             <div class="d-flex align-items-center w-auto">
                                 <CartIcon />
@@ -99,7 +90,11 @@ function Navbar() {
                                         <a class="dropdown-item" href="#">
                                             My Profile
                                         </a>
-                                        <a class="dropdown-item" href="#">
+                                        <a
+                                            class="dropdown-item"
+                                            onClick={logout}
+                                            style={{ cursor: "pointer" }}
+                                        >
                                             Logout
                                         </a>
                                         <a class="dropdown-item" href="#">
