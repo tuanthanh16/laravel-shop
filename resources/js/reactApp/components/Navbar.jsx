@@ -30,9 +30,11 @@ function Navbar() {
             <div className="container">
                 <div className="row d-flex align-items-center">
                     <div className="col-md-2">
-                        <img src={logo} alt="logo" className="logo-navbar" />
-                    </div>
-                    <div className="col-9 col-md-3">
+                    <Link to="/"> 
+                        <img src={logo} alt="logo" className="logo-navbar"/>
+                    </Link>
+                    </div>                
+                    <div className="col-7 col-md-3">
                         <Search />
                     </div>
                     <div className="col-3 d-md-none">
