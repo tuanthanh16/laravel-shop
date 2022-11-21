@@ -15,7 +15,7 @@ class ProductController extends Controller
     {
 
         $products = Product::get();
-
+        // var_dump($products);
         return response()->json([
             "status" => 1,
             "message" => "Products load successfully",
@@ -106,17 +106,17 @@ class ProductController extends Controller
     }
 
     // search product by name or description
-    public function search()
+    public function search($keyword)
     {
-        $keyword = $_GET['keyword'];
         $products = Product::where('name', 'like', "%" . $keyword . "%")
             ->orWhere('description', 'like', "%" . $keyword . "%")
             ->get();
-        // dd($products);
+
         if (count($products) == 0) {
             return response()->json([
                 "status" => 0,
                 "message" => "Products not found",
+                "data" => []
             ]);
         } else {
             return response()->json([
@@ -130,14 +130,14 @@ class ProductController extends Controller
 
     public function getProductsByCategory($category_id)
     {
-        Category::findOrFail($category_id);
+        $category = Category::findOrFail($category_id);
 
         $products = Product::where('cat_id', $category_id)->get();
 
         return response()->json([
             "status" => 1,
             "message" => "Products load successfully",
-            "data" => $products
+            "data" => [$products, $category]
         ]);
     }
 

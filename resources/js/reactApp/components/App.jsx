@@ -18,6 +18,7 @@ import Register from "./user/Register";
 import { loadUser } from "./user/actions/auth";
 import CartBox from "./cart/CartBox";
 import Store from "../Pages/Store";
+import Checkout from "./cart/Checkout";
 
 export default function App() {
     const location = useLocation();
@@ -45,19 +46,25 @@ export default function App() {
                         {location.pathname == "/" && <CarouselContainer />}
                         {location.pathname == "/store" && <CarouselContainer />}
 
-                        
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/store" element={<Store />} />
-                            <Route path="/store/:categoryId" element={<Store />} />
+                            <Route
+                                path="/store/:categoryId"
+                                element={<Store />}
+                            />
+                            <Route
+                                path="/search/:keyword"
+                                element={<Store />}
+                            />
                             <Route path="/about-us" element={<AboutUs />} />
                             <Route path="/contact-us" element={<ContactUs />} />
                             <Route path="/login" element={<LoginForm />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/cart" element={<CartBox />} />
+                            <Route path="/checkout" element={<Checkout />} />
                         </Routes>
                         {location.pathname !== "/contact-us" && <Footer />}
-                        
                     </div>
                 </CartContext.Provider>
             </UserContext.Provider>

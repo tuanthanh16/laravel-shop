@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('code', 50)->nullable();
             $table->string('name', 150);
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             // data type for price = decimal, unsigned
             $table->decimal('price', 10, 2, true);
             $table->unsignedInteger('stock')->nullable();
