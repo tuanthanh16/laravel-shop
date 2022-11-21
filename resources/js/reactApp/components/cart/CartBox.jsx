@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
 import CartContext from "../CartContext";
 
 const CartBox = () => {
     const { cart } = useContext(CartContext);
     const [totalCost, setTotalCost] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const updateCost = cart.reduce(
@@ -14,18 +15,19 @@ const CartBox = () => {
         );
         setTotalCost(Number(updateCost).toFixed(2));
     }, [cart]);
+
+    const handleCheckout = () => {
+        navigate("/checkout");
+    };
     return (
         <section
-            className="h-100 h-custom"
+            className="h-75 overflow-auto"
             style={{ backgroundColor: "#d2c9ff" }}
         >
-            <div className="container py-5 h-100">
-                <div className="row d-flex justify-content-center align-items-center h-100">
+            <div className="container py-5 h-75">
+                <div className="row d-flex justify-content-center align-items-center h-75">
                     <div className="col-12">
-                        <div
-                            className="card card-registration card-registration-2"
-                            style={{ borderRadius: "15px" }}
-                        >
+                        <div className="card" style={{ borderRadius: "15px" }}>
                             <div className="card-body p-0">
                                 <div className="row g-0">
                                     <div className="col-lg-8">
@@ -35,10 +37,11 @@ const CartBox = () => {
                                                     Shopping Cart
                                                 </h1>
                                                 <h6 className="mb-0 text-muted">
-                                                    3 items
+                                                    {cart.length} items
                                                 </h6>
                                             </div>
                                             <hr className="my-4" />
+
                                             {cart &&
                                                 cart.map((item, index) => (
                                                     <CartItem
@@ -60,34 +63,9 @@ const CartBox = () => {
 
                                             <div className="d-flex justify-content-between mb-4">
                                                 <h5 className="text-uppercase">
-                                                    items {cart.length}
-                                                </h5>
-                                                <h5>€ {totalCost}</h5>
-                                            </div>
-
-                                            <h5 className="text-uppercase mb-3">
-                                                Give code
-                                            </h5>
-
-                                            <div className="mb-5">
-                                                <div className="form-outline">
-                                                    <input
-                                                        type="text"
-                                                        className="form-control form-control-lg"
-                                                    />
-                                                    <label className="form-label">
-                                                        Enter your code
-                                                    </label>
-                                                </div>
-                                            </div>
-
-                                            <hr className="my-4" />
-
-                                            <div className="d-flex justify-content-between mb-5">
-                                                <h5 className="text-uppercase">
                                                     Total price
                                                 </h5>
-                                                <h5>€ 137.00</h5>
+                                                <h5>€ {totalCost}</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -106,6 +84,7 @@ const CartBox = () => {
                                             type="button"
                                             className="btn btn-dark btn-block btn-lg"
                                             data-mdb-ripple-color="dark"
+                                            onClick={handleCheckout}
                                         >
                                             Checkout
                                         </button>

@@ -30,10 +30,14 @@ function Navbar() {
             <div className="container">
                 <div className="row d-flex align-items-center">
                     <div className="col-md-2">
-                    <Link to="/"> 
-                        <img src={logo} alt="logo" className="logo-navbar"/>
-                    </Link>
-                    </div>                
+                        <Link to="/">
+                            <img
+                                src={logo}
+                                alt="logo"
+                                className="logo-navbar"
+                            />
+                        </Link>
+                    </div>
                     <div className="col-7 col-md-3">
                         <Search />
                     </div>
@@ -43,72 +47,69 @@ function Navbar() {
                         </button>
                     </div>
                     <div
-                        className={`col-12 col-md-7 links d-md-block ${showLinks ? "" : "d-none"
-                            }`}
-                    />
-                    <div className="row d-flex align-items-center">
-                        <Link className="col-12 col-md-2" to="/">
-                            Home
-                        </Link>
-                        <a className="col-12 col-md-2" href="/store">
-                            Store
-                        </a>
-                        <Link className="col-12 col-md-2" to="/register">
-                            Register
-                        </Link>
-                        {user[0].id == -100 && (
-                            <Link className="col-12 col-md-2" to="/login">
-                                Login
+                        className={`col-12 col-md-7 links d-md-block ${
+                            showLinks ? "" : "d-none"
+                        }`}
+                    >
+                        <div className="row d-flex align-items-center">
+                            <Link className="col-12 col-md-2" to="/">
+                                Home
                             </Link>
-                        )}
-                        {user[0].id != -100 && (
-                            <button
-                                className="btn-logout col-12 col-md-2"
-                                onClick={logout}
-                            >
-                                Logout
-                            </button>
-                        )}
-                        <a className="col-12 col-md-2" href="/contacts">
-                            Contacts
-                        </a>
+                            <a className="col-12 col-md-2" href="/store">
+                                Store
+                            </a>
+                            <Link className="col-12 col-md-2" to="/register">
+                                Register
+                            </Link>
+                            {user[0].id == -100 && (
+                                <Link className="col-12 col-md-2" to="/login">
+                                    Login
+                                </Link>
+                            )}
+                            <a className="col-12 col-md-2" href="/contacts">
+                                Contacts
+                            </a>
 
-                        {/* <Cart /> */}
-                        {/* Right box */}
-                        <div class="d-flex align-items-center w-auto">
-                            <CartIcon />
-                            {/* Avatar */}
-                            <div class="dropdown">
-                                <div
-                                    class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                                    role="button"
-                                    data-toggle="dropdown"
-                                    aria-expanded="false"
-                                >
-                                    <img
-                                        src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                                        class="rounded-circle"
-                                        height="25"
-                                        alt="Black and White Portrait of a Man"
-                                        loading="lazy"
-                                    />
-                                    <span className="ms-2">
-                                        {user[0].name}
-                                    </span>
-                                </div>
-                                <div
-                                    class="dropdown-menu"
-                                    aria-labelledby="dropdownMenuButton"
-                                >
-                                    <a class="dropdown-item" href="#">
-                                        My Profile
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        Logout
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        Something else here
-                                    </a>
+                            {/* Right box */}
+                            <div class="d-flex align-items-center w-auto">
+                                <CartIcon />
+                                {/* Avatar */}
+                                <div class="dropdown">
+                                    <div
+                                        class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                                        role="button"
+                                        data-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        <img
+                                            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                                            class="rounded-circle"
+                                            height="25"
+                                            alt="Black and White Portrait of a Man"
+                                            loading="lazy"
+                                        />
+                                        <span className="ms-2">
+                                            {user[0].name}
+                                        </span>
+                                    </div>
+                                    <div
+                                        class="dropdown-menu"
+                                        aria-labelledby="dropdownMenuButton"
+                                    >
+                                        <a class="dropdown-item" href="#">
+                                            My Profile
+                                        </a>
+                                        <a
+                                            class="dropdown-item"
+                                            onClick={logout}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            Logout
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            Something else here
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +117,6 @@ function Navbar() {
                 </div>
             </div>
         </div>
-
     );
 }
 
