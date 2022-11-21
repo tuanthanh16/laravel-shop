@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\DiscountController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
@@ -30,6 +31,8 @@ Route::get('/search-products/{keyword}', [ProductController::class, 'search'])->
 Route::get('/list-categories', [CategoryController::class, 'index'])->name('api.list-categories');
 Route::get('/products/{category_id}', [ProductController::class, 'getProductsByCategory'])->name('api.get-products-category');
 // Route::get('/user', [UserController::class, 'getAuthUser']);
+
+Route::get('/redeem/{code}',[DiscountController::class, 'redeem']);
 
 // these routes are for login from SPA
 Route::post('/login', [LoginController::class, 'login']);

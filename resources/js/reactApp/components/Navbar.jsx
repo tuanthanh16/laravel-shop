@@ -52,26 +52,38 @@ function Navbar() {
                         }`}
                     >
                         <div className="row d-flex align-items-center">
-                            <Link className="col-12 col-md-2" to="/">
-                                Home
-                            </Link>
-                            <a className="col-12 col-md-2" href="/store">
-                                Store
-                            </a>
-                            <Link className="col-12 col-md-2" to="/register">
-                                Register
-                            </Link>
-                            {user[0].id == -100 && (
-                                <Link className="col-12 col-md-2" to="/login">
-                                    Login
+                            {/* Left div */}
+                            <div
+                                className="d-flex
+                                align-items-center
+                                w-75"
+                            >
+                                <Link className="col-12 col-md-2" to="/">
+                                    Home
                                 </Link>
-                            )}
-                            <a className="col-12 col-md-2" href="/contacts">
-                                Contacts
-                            </a>
-
+                                <Link className="col-12 col-md-2" to="/store">
+                                    Store
+                                </Link>
+                                <Link
+                                    className="col-12 col-md-2"
+                                    to="/register"
+                                >
+                                    Register
+                                </Link>
+                                {user[0].id == -100 && (
+                                    <Link
+                                        className="col-12 col-md-2"
+                                        to="/login"
+                                    >
+                                        Login
+                                    </Link>
+                                )}
+                                <a className="col-12 col-md-2" href="/contacts">
+                                    Contacts
+                                </a>
+                            </div>
                             {/* Right box */}
-                            <div class="d-flex align-items-center w-auto">
+                            <div class="d-flex align-items-center w-auto flex-grow-1">
                                 <CartIcon />
                                 {/* Avatar */}
                                 <div class="dropdown">
