@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-
+import { useState  } from 'react';
 
 function Search() {
-
     const [searchKeyword, setSearchKeyword] = useState('');
 
     function handleClick(e) {
         if (e.key === 'Enter') {
-            console.log(searchKeyword)
-            //callToBackend("/Search", {  })
+            const url = '/search/' + searchKeyword;
+            location.replace(url);
         }
     }
 

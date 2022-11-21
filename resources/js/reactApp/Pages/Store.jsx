@@ -1,7 +1,7 @@
 import ProductCard from '../components/ProductCard';
 import CategoryCard from '../components/CategoryCard';
 import { useState, useEffect, useContext } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 import "../../../css/app.css";
 import CartContext from '../components/CartContext';
 
@@ -11,7 +11,8 @@ const Store = () => {
 
     // fetching data from API endpoint (products)
     const [productsData, setProductsData] = useState([])
-    const { categoryId } = useParams()
+    const [pageTitle, setpageTitle] = useState('')
+    const { categoryId, keyword } = useParams()
 
     const loadProductsData = async () => {
 
@@ -19,7 +20,10 @@ const Store = () => {
 
         if(categoryId) {
             url = '/api/products/' + categoryId
-        } else {
+        } 
+        else if (keyword)
+            url = 'api/search-products/' + keyword
+        else {
             url = '/api/list-products'
         }
 
@@ -27,12 +31,26 @@ const Store = () => {
 
         const data = await response.json();
 
-        // console.log(data.data)
-        setProductsData(data.data);
+        console.log(data.data)
+
+        if (categoryId) {
+            setProductsData(data.data[0]);
+        } else {
+            setProductsData(data.data);
+        }
+
+        
+        if (categoryId) {
+            setpageTitle(data.data[1].name);
+        } else if (keyword) {
+            setpageTitle('Search: ' + keyword)
+        } else {
+            setpageTitle('Store')
+        }
     }
-
-
+    
     useEffect(() => {
+        
         loadProductsData()
     }, [])
 
@@ -42,7 +60,7 @@ const Store = () => {
         <>
 
             <div className='container-fluid'>
-                <h3 className='text-center mt-5 text-uppercase'>Store Page</h3>
+                <h3 className='text-center mt-5 text-uppercase'>{pageTitle}</h3>
                 <div className="container py-4">
                     <div className="row">
 
