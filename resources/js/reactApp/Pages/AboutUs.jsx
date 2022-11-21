@@ -1,7 +1,11 @@
 import "./AboutUsStyle.css";
 
+
 const AboutUs = () => {
     return (
+
+        <>
+
         <section id="about">
             <div className="about-1">
                 <h1>About Us</h1>
@@ -46,6 +50,7 @@ const AboutUs = () => {
                 </div>
             </div>
         </section>
+        </>
     )
 }
 

@@ -140,4 +140,15 @@ class ProductController extends Controller
             "data" => $products
         ]);
     }
+
+    public function getProduct($product_id)
+    {
+        $product = Product::where('id', $product_id)->get();
+
+        return response()->json([
+            "status" => 1,
+            "message" => "Products load successfully",
+            "data" => $product
+        ]);
+    }
 }
