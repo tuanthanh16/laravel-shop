@@ -27,7 +27,7 @@ const ProductDetail = ({productId}) => {
   
   {/* <h1>{loadDetail}</h1> */}
   <Button variant="primary" onClick={() => setDetail(true)}>
-    Launch vertically centered modal
+    
   </Button>
 
   <ProductModal
