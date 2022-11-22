@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import UserContext from "./user/UserContext";
 import CartIcon from "./cart/CartIcon";
 
-function Navbar() {
+function Navbar({ keyword, setKeyword }) {
     const [showLinks, setShowLinks] = useState(false);
     const { user, setUser } = useContext(UserContext);
     const guestUser = [{ id: -100, name: "Guest" }, { token: null }];
@@ -39,7 +39,7 @@ function Navbar() {
                         </Link>
                     </div>
                     <div className="col-7 col-md-3">
-                        <Search />
+                        <Search keyword={keyword} setKeyword={setKeyword} />
                     </div>
                     <div className="col-3 d-md-none">
                         <button onClick={() => setShowLinks(!showLinks)}>
@@ -47,9 +47,8 @@ function Navbar() {
                         </button>
                     </div>
                     <div
-                        className={`col-12 col-md-7 links d-md-block ${
-                            showLinks ? "" : "d-none"
-                        }`}
+                        className={`col-12 col-md-7 links d-md-block ${showLinks ? "" : "d-none"
+                            }`}
                     >
                         <div className="row d-flex align-items-center">
                             {/* Left div */}

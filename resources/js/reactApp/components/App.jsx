@@ -25,6 +25,7 @@ export default function App() {
     const [cart, setCart] = useState([]);
     const guestUser = [{ id: -100, name: "Guest" }, { token: null }];
     const [user, setUser] = useState(guestUser);
+    const [keyword, setKeyword] = useState(null)
     const getUser = async () => {
         const logUser = await loadUser();
         if (logUser) {
@@ -42,20 +43,20 @@ export default function App() {
             <UserContext.Provider value={{ user, setUser }}>
                 <CartContext.Provider value={{ cart, setCart }}>
                     <div className="App">
-                        <Navbar />
+                        <Navbar keyword={keyword} setKeyword={setKeyword} />
                         {location.pathname == "/" && <CarouselContainer />}
                         {location.pathname == "/store" && <CarouselContainer />}
 
                         <Routes>
                             <Route path="/" element={<Home />} />
-                            <Route path="/store" element={<Store />} />
+                            <Route path="/store" element={<Store keyword={keyword} setKeyword={setKeyword} />} />
                             <Route
                                 path="/store/:categoryId"
-                                element={<Store />}
+                                element={<Store keyword={keyword} setKeyword={setKeyword} />}
                             />
                             <Route
-                                path="/search/:keyword"
-                                element={<Store />}
+                                path="/search"
+                                element={<Store keyword={keyword} setKeyword={setKeyword} />}
                             />
                             <Route path="/about-us" element={<AboutUs />} />
                             <Route path="/contact-us" element={<ContactUs />} />
