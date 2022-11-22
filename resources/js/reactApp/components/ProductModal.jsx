@@ -19,8 +19,10 @@ export default function ProductModal(props) {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div></div>            
+            <div className="card h-100 shadow rounded">
+            <img src={"/product_images/" + props.show.image + ".png"} alt="" />
             <p>{props.show.description}</p>
+            </div>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={props.onHide}>Close</Button>

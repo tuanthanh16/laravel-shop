@@ -4,9 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ProductModal from "./ProductModal";
 
-const ProductDetail = ({productId}) => {
+const ProductDetail = ({productId, setDetail, detail,setShowProduct}) => {
 
-  const [detail, setDetail] = useState([])
+  // const [detail, setDetail] = useState([])
   // const [modalShow, setModalShow] = React.useState(false);
 
   const loadDetail = async () => {
@@ -18,7 +18,10 @@ const ProductDetail = ({productId}) => {
   }
 
   useEffect(() => {
-    loadDetail()
+    if(detail) {
+      loadDetail()
+    }
+    console.log(detail)
   }, [])
 
   return (  
@@ -27,12 +30,17 @@ const ProductDetail = ({productId}) => {
   
   {/* <h1>{loadDetail}</h1> */}
   <Button variant="primary" onClick={() => setDetail(true)}>
-    Launch vertically centered modal
+    
   </Button>
 
   <ProductModal
     show={detail}
-    onHide={() => setDetail(false)}
+    onHide={() =>{
+      setDetail(false)
+      setShowProduct(false)
+      console.log('hello')
+
+    }}
   />
 
   
