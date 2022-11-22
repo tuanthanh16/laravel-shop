@@ -1,7 +1,10 @@
+.footer{
+    padding: 0.2%;
+    margin-top: 1rem;
+}
 .footer-box {
     list-style: none;
     margin-top: 2em;
-
 }
 
 .logo-footer {

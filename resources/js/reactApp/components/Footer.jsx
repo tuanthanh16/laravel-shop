@@ -5,6 +5,7 @@ import logo from "../../images/background-imgs/balkan.png";
 
 const Footer = () => {
     return (
+        <div className='footer'>
         <div className='container' style={{ marginTop: '4rem' }}>
             <div className='row'>
                 {/* Column1 */}
@@ -53,6 +54,7 @@ const Footer = () => {
                         <span>Balkan Discount Market | All rights reserved</span></p>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
