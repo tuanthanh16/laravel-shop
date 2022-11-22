@@ -8,6 +8,8 @@ import ProductDetail from "../components/ProductDetail";
 const ProductCard = ({ product }) => {
 
     const [showProduct, setShowProduct] = useState(false)
+    const [detail, setDetail] = useState([])
+
 
     // add products to cart
 
@@ -59,13 +61,15 @@ const ProductCard = ({ product }) => {
 
     // function to get product detail
     const toggleShowProduct = () => {
+
+        setDetail(true);
         setShowProduct(true);
     }
 
     return (
 
         < div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4" >
-            {showProduct && <ProductDetail productId={product.id} />
+            {showProduct && <ProductDetail productId={product.id} detail={detail} setDetail={setDetail} setShowProduct={setShowProduct}/>
             }
             <div className="card h-100 shadow rounded">
                 <div
