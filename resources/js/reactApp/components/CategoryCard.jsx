@@ -12,12 +12,16 @@ const CategoryCard = ({ category }) => {
             <div className="card h-100 shadow rounded">
 
                 <Link to={"/store/" + category.id}>
-                    <div className="thumbnail" style={{ backgroundImage: `url(${"/product_images/" + category.image + ".png"})` }}></div>
+
+                    <div className="thumbnail" style={{ backgroundImage: `url(${"/category_images/" + category.image + ".png"})` }}></div>
+                    {console.log(category.image)}
                 </Link>
+
+
 
                 <div className="card-body">
                     <div className="d-flex justify-content-between">
-                        
+
                         <Link to={"/store/" + category.id}>
                             <h5 className="card-title">
                                 {category.name}

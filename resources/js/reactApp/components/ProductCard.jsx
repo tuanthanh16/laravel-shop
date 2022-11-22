@@ -6,7 +6,7 @@ import ProductDetail from "../components/ProductDetail";
 
 
 const ProductCard = ({ product }) => {
-    
+
     const [showProduct, setShowProduct] = useState(false)
     const [detail, setDetail] = useState([])
 
