@@ -7,9 +7,6 @@ export default function ProductModal(props) {
   console.log(props);
 
   return (
-    <>
-      {console.log(props.show)}
-
     <Modal
       {...props}
       size="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4"
@@ -22,14 +19,15 @@ export default function ProductModal(props) {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
+            <div className="card h-100 shadow rounded">
+            <img src={"/product_images/" + props.show.image + ".png"} alt="" />
             <p>{props.show.description}</p>
+            </div>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={props.onHide}>Close</Button>
            </Modal.Footer>
         </div>
     </Modal>
-    </>
-
   );
 }
