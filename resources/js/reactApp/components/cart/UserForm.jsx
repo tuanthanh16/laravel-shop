@@ -1,8 +1,87 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import UserContext from "../user/UserContext";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { loadUser } from "../user/actions/auth";
+import CartContext from "../CartContext";
 
-const UserForm = () => {
-    const { user } = useContext(UserContext);
+const UserForm = ({ onShow }) => {
+    const { user, setUser } = useContext(UserContext);
+    const { cart, setCart } = useContext(CartContext);
+    const saveRef = useRef();
+    const nameRef = useRef();
+    const surNameRef = useRef();
+    const emailRef = useRef();
+    let userId = 9999999999;
+    const inputHtml =
+        user[0].id != -100 ? (
+            <input
+                type="checkbox"
+                className="form-check-input"
+                ref={saveRef}
+                disabled
+            />
+        ) : (
+            <input type="checkbox" className="form-check-input" ref={saveRef} />
+        );
+    // ---- code -----
+    const getUser = async () => {
+        const logUser = await loadUser();
+        if (logUser) {
+            setUser(logUser);
+            userId = logUser[0].id;
+            // console.log(`user from function ${logUser[0].id} had logged in`);
+            // console.log(`user from userContext ${user[0].id} had logged in`);
+        } else {
+            console.log("user not found");
+        }
+    };
+    const handleCheckout = async (e) => {
+        e.preventDefault();
+        //check if user logged in
+        if (user[0].id != -100) {
+            userId = user[0].id;
+            //user logged in -> save userId -> continue create order
+        } else {
+            // if saveRef = true -> validation name/surname/email -> save
+            console.log("user not logged in: ", userId);
+            if (saveRef.current.checked) {
+                const regData = {
+                    name: nameRef.current.value,
+                    surname: surNameRef.current.value,
+                    email: emailRef.current.value,
+                    password: "password",
+                    password_confirmation: "password",
+                };
+                const response = await axios.post("/register", regData);
+                console.log(response);
+                // get user login
+                await getUser();
+                console.log("new user created: ", userId);
+            }
+        }
+        // create sale here with logged user or new user id or id = 9999999999
+        console.log(userId);
+        const saleData = {
+            customer_id: userId,
+            status: 1,
+        };
+        const sale = await axios.post("/api/create-sale", saleData);
+        const sale_id = sale.data.id;
+        //create sale_details with sale_id and cart context
+        cart.forEach((item) => {
+            const detailData = {
+                sale_id: sale_id,
+                product_id: item.id,
+                quantity: item.qty,
+            };
+            axios.post("/api/create-detail", detailData);
+        });
+        // clear cart
+        setCart([]);
+        console.log("thank you");
+        onShow();
+    };
     return (
         <div className="card">
             <form className="card-body">
@@ -14,6 +93,7 @@ const UserForm = () => {
                                 type="text"
                                 className="form-control"
                                 defaultValue={user[0].name}
+                                ref={nameRef}
                             />
                         </div>
                     </div>
@@ -25,18 +105,20 @@ const UserForm = () => {
                                 type="text"
                                 className="form-control"
                                 defaultValue={user[0].surname}
+                                ref={surNameRef}
                             />
                         </div>
                     </div>
                 </div>
 
                 <div className="md-form mb-2">
-                    <label>Email (optional)</label>
+                    <label>Email</label>
                     <input
                         type="text"
                         className="form-control"
                         placeholder="youremail@example.com"
                         defaultValue={user[0].email}
+                        ref={emailRef}
                     />
                 </div>
 
@@ -64,16 +146,16 @@ const UserForm = () => {
                     <input
                         type="checkbox"
                         className="form-check-input"
-                        checked
+                        defaultChecked
                     />
                     <label className="form-check-label">
                         Shipping address is the same as my billing address
                     </label>
                 </div>
                 <div className="form-check">
-                    <input type="checkbox" className="form-check-input" />
+                    {inputHtml}
                     <label className="form-check-label">
-                        Save this information for next time
+                        Register this information for next time
                     </label>
                 </div>
 
@@ -85,7 +167,7 @@ const UserForm = () => {
                             name="paymentMethod"
                             type="radio"
                             className="form-check-input"
-                            checked
+                            defaultChecked
                         />
                         <label className="form-check-label">Credit card</label>
                     </div>
@@ -131,7 +213,11 @@ const UserForm = () => {
                 </div>
                 <hr />
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button className="btn btn-primary btn-block" type="submit">
+                    <button
+                        className="btn btn-primary btn-block"
+                        type="submit"
+                        onClick={handleCheckout}
+                    >
                         Continue to checkout
                     </button>
                 </div>
