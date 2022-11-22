@@ -1,9 +1,9 @@
 import ProductCard from '../components/ProductCard';
-import CategoryCard from '../components/CategoryCard';
 import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import "../../../css/app.css";
 import CartContext from '../components/CartContext';
+
 
 
 const Store = () => {

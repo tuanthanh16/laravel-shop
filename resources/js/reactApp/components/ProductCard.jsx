@@ -1,12 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 import { Button } from "react-bootstrap";
 import CartContext from "./CartContext";
+import ProductDetail from "../components/ProductDetail";
+
 
 
 const ProductCard = ({ product }) => {
-
-
-
+    
+    const [showProduct, setShowProduct] = useState(false)
 
     // add products to cart
 
@@ -54,13 +55,19 @@ const ProductCard = ({ product }) => {
         // setPrice(Math.max(0, price - Number(product.price)))
         //###REDUCER    dispatch({ type: "decrement" })
     };
-
     // console.log(cart);
+
+    // function to get product detail
+    const toggleShowProduct = () => {
+        setShowProduct(true);
+    }
 
     return (
         <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4">
+            { showProduct && <ProductDetail productId={product.id} />}
             <div className="card h-100 shadow rounded">
                 <div
+                    onClick={toggleShowProduct}
                     class="thumbnail"
                     style={{
                         backgroundImage: `url(${"/product_images/" + product.image + ".png"
