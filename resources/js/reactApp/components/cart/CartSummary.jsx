@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import CartContext from "../CartContext";
 import CartSummaryItem from "./CartSummaryItem";
 import axios from "axios";
@@ -6,6 +6,7 @@ import axios from "axios";
 const CartSummary = () => {
     const { cart } = useContext(CartContext);
     const [discountProducts, setDiscountProducts] = useState([]);
+    // console.log("before declare: ", discountAmount);
     const [discountAmount, setDiscountAmount] = useState(0);
     const [discountObj, setDiscountObj] = useState(null);
     // const [hasDiscount, setHasDiscount] = useState(false);
@@ -16,8 +17,17 @@ const CartSummary = () => {
     );
     const redeemRef = useRef();
     // --- code ----
-    const handleRedeem = async () => {
+    useEffect(() => {
+        setDiscountAmount(0);
+        setCoupons("");
+    }, [cart]);
+
+    const handleRedeem = async (e) => {
+        e.preventDefault();
         const coupon = redeemRef.current.value;
+        if (coupon == "") {
+            return;
+        }
         //reset field
         redeemRef.current.value = "";
         // find products are discounted
@@ -62,7 +72,6 @@ const CartSummary = () => {
         <>
             <h4 className="d-flex justify-content-between align-items-center mb-3">
                 <span className="text-muted">Your cart</span>
-                {/* <span className="badge badge-secondary badge-pill">3</span> */}
             </h4>
 
             <ul className="list-group mb-3 z-depth-1">
@@ -75,13 +84,6 @@ const CartSummary = () => {
                     />
                 ))}
 
-                {/* <li className="list-group-item d-flex justify-content-between bg-light">
-                    <div className="text-success">
-                        <h6 className="my-0">Promo code</h6>
-                        <small>EXAMPLECODE</small>
-                    </div>
-                    <span className="text-success">-$5</span>
-                </li> */}
                 <li className="list-group-item d-flex justify-content-between">
                     <span>Total (USD)</span>
                     <strong>${totalCost.toFixed(2)}</strong>
@@ -111,7 +113,7 @@ const CartSummary = () => {
                     <div className="input-group-append">
                         <button
                             className="btn btn-secondary btn-md waves-effect m-0"
-                            type="button"
+                            type="submit"
                             onClick={handleRedeem}
                         >
                             Redeem

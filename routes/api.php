@@ -3,6 +3,8 @@
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\DiscountController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\SaleController;
+use App\Http\Controllers\Api\SaleDetailController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -38,3 +40,9 @@ Route::get('/redeem/{code}', [DiscountController::class, 'redeem']);
 // these routes are for login from SPA
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout']);
+
+//sale controller
+Route::post('/create-sale', [SaleController::class, 'store']);
+
+// sale_detail controller
+Route::post('/create-detail', [SaleDetailController::class, 'store']);
