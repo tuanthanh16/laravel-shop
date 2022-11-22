@@ -29,6 +29,9 @@ const ProductDetail = ({productId, setDetail, detail,setShowProduct}) => {
   <>
   
   {/* <h1>{loadDetail}</h1> */}
+  <Button variant="primary" onClick={() => setDetail(true)}>
+    
+  </Button>
 
   <ProductModal
     show={detail}

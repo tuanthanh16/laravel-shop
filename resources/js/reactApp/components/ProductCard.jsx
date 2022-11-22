@@ -92,20 +92,20 @@ const ProductCard = ({ product }) => {
                     <div className="">
                         <p className="card-text">{product.description}</p>
                     </div>
-                    <Button
-                        onClick={() => {
-                            increment();
-                        }}
-                    >
-                        +
-                    </Button>
-                    <span className="fs-3">{amount}</span>
-                    <Button
+                    <Button className="btn btn-light"
                         onClick={() => {
                             decrement();
                         }}
                     >
                         -
+                    </Button>
+                    <span className="fs-5" style={{padding: "1rem"}}>{amount}</span>
+                    <Button className="btn btn-light"
+                        onClick={() => {
+                            increment();
+                        }}
+                    >
+                        +
                     </Button>
                 </div>
                 <div className="d-flex  justify-content-end mt-4">

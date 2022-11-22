@@ -55,7 +55,7 @@ function Navbar({ keyword, setKeyword }) {
                             <div
                                 className="d-flex
                                 align-items-center
-                                w-75"
+                                w-100"
                             >
                                 <Link className="col-12 col-md-2" to="/">
                                     Home
@@ -77,13 +77,11 @@ function Navbar({ keyword, setKeyword }) {
                                         Login
                                     </Link>
                                 )}
-                                <a className="col-12 col-md-2" href="/contacts">
-                                    Contacts
-                                </a>
-                            </div>
-                            {/* Right box */}
                             <div class="d-flex align-items-center w-auto flex-grow-1">
                                 <CartIcon />
+                               
+                            </div>
+                            {/* Right box */}
                                 {/* Avatar */}
                                 <div class="dropdown">
                                     <div

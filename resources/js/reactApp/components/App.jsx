@@ -8,6 +8,7 @@ import CarouselContainer from "./Carousel";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ContactUs from "../Pages/ContactUs";
+import TermsAndConditions from "../Pages/TermsAndConditions";
 import AboutUs from "../Pages/AboutUs";
 import Home from "../Pages/Home.jsx";
 import CartContext from "./CartContext";
@@ -19,6 +20,7 @@ import { loadUser } from "./user/actions/auth";
 import CartBox from "./cart/CartBox";
 import Store from "../Pages/Store";
 import Checkout from "./cart/Checkout";
+
 
 export default function App() {
     const location = useLocation();
@@ -60,6 +62,7 @@ export default function App() {
                             />
                             <Route path="/about-us" element={<AboutUs />} />
                             <Route path="/contact-us" element={<ContactUs />} />
+                            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                             <Route path="/login" element={<LoginForm />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/cart" element={<CartBox />} />
