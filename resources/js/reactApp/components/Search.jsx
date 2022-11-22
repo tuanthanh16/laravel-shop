@@ -1,12 +1,20 @@
-import { useState  } from 'react';
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
-function Search() {
+
+function Search({ keyword, setKeyword }) {
     const [searchKeyword, setSearchKeyword] = useState('');
 
+    const navigate = useNavigate()
+
     function handleClick(e) {
+
         if (e.key === 'Enter') {
-            const url = '/search/' + searchKeyword;
-            location.replace(url);
+
+
+            setKeyword(searchKeyword)
+
+            navigate("/search");
         }
     }
 
