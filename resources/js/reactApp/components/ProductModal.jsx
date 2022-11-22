@@ -7,6 +7,9 @@ export default function ProductModal(props) {
   console.log(props);
 
   return (
+    <>
+      {console.log(props.show)}
+
     <Modal
       {...props}
       size="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4"
@@ -19,7 +22,6 @@ export default function ProductModal(props) {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div></div>            
             <p>{props.show.description}</p>
           </Modal.Body>
           <Modal.Footer>
@@ -27,5 +29,7 @@ export default function ProductModal(props) {
            </Modal.Footer>
         </div>
     </Modal>
+    </>
+
   );
 }
