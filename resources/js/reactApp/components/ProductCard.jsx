@@ -6,7 +6,7 @@ import ProductDetail from "../components/ProductDetail";
 
 
 const ProductCard = ({ product }) => {
-    
+
     const [showProduct, setShowProduct] = useState(false)
 
     // add products to cart
@@ -63,8 +63,10 @@ const ProductCard = ({ product }) => {
     }
 
     return (
-        <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4">
-            { showProduct && <ProductDetail productId={product.id} />}
+
+        < div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4" >
+            {showProduct && <ProductDetail productId={product.id} />
+            }
             <div className="card h-100 shadow rounded">
                 <div
                     onClick={toggleShowProduct}

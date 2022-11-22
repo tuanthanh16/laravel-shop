@@ -5,33 +5,39 @@ import "../../../css/app.css";
 import CartContext from '../components/CartContext';
 
 
-
-const Store = () => {
+const Store = ({ keyword }) => {
     const { cart, setCart } = useContext(CartContext)
 
     // fetching data from API endpoint (products)
     const [productsData, setProductsData] = useState([])
     const [pageTitle, setpageTitle] = useState('')
-    const { categoryId, keyword } = useParams()
+    const { categoryId } = useParams()
 
     const loadProductsData = async () => {
 
         let url = ''
+        console.log(keyword)
 
-        if(categoryId) {
+        if (keyword) {
+            url = '/api/search-products?search=' + keyword
+            console.log(url)
+        }
+
+        else if (categoryId) {
             url = '/api/products/' + categoryId
-        } 
-        else if (keyword)
-            url = 'api/search-products/' + keyword
+            console.log(url)
+        }
+
         else {
             url = '/api/list-products'
+            console.log(url)
         }
 
         const response = await fetch(url)
 
         const data = await response.json();
 
-        console.log(data.data)
+        console.log(data)
 
         if (categoryId) {
             setProductsData(data.data[0]);
@@ -39,7 +45,7 @@ const Store = () => {
             setProductsData(data.data);
         }
 
-        
+
         if (categoryId) {
             setpageTitle(data.data[1].name);
         } else if (keyword) {
@@ -48,16 +54,17 @@ const Store = () => {
             setpageTitle('Store')
         }
     }
-    
+
     useEffect(() => {
-        
+
         loadProductsData()
-    }, [])
+    }, [keyword])
 
     return (
 
 
         <>
+
 
             <div className='container-fluid'>
                 <h3 className='text-center mt-5 text-uppercase'>{pageTitle}</h3>

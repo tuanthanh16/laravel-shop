@@ -106,10 +106,12 @@ class ProductController extends Controller
     }
 
     // search product by name or description
-    public function search($keyword)
+    public function search(Request $request)
     {
-        $products = Product::where('name', 'like', "%" . $keyword . "%")
-            ->orWhere('description', 'like', "%" . $keyword . "%")
+        $data = $request->all();
+
+        $products = Product::where('name', 'like', "%" . $data["search"] . "%")
+            ->orWhere('description', 'like', "%" . $data["search"] . "%")
             ->get();
 
         if (count($products) == 0) {
