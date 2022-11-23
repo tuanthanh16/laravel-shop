@@ -95,7 +95,7 @@ const CartSummary = () => {
                 <li className="list-group-item d-flex justify-content-between">
                     <span>Total after discount (USD)</span>
                     <strong>
-                        ${Number(totalCost - discountAmount).toFixed(2)}
+                        {Number(totalCost - discountAmount).toFixed(2)} Kč
                     </strong>
                 </li>
             </ul>

@@ -66,7 +66,7 @@ const CartBox = () => {
                                                 <h5 className="text-uppercase">
                                                     Total price
                                                 </h5>
-                                                <h5>€ {totalCost}</h5>
+                                                <h5> {totalCost} Kč</h5>
                                             </div>
                                         </div>
                                     </div>
