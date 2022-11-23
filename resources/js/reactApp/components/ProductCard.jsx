@@ -63,7 +63,7 @@ const ProductCard = ({ product }) => {
     };
 
     return (
-        <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4">
+        <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 mb-4">
             {showProduct && (
                 <ProductDetail
                     productId={product.id}
