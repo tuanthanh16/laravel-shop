@@ -188,3 +188,9 @@ a:hover {
 .search-form-group input {
     padding-left: 35px;
 }
+
+.terms {
+    margin-left: 4rem;
+    width: 100vw;
+
+}

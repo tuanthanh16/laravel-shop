@@ -15,8 +15,8 @@ const Footer = () => {
                 <div className='col-12 col-md-3'>
                     <h4>Company</h4>
                     <ul className='footer-box ps-2'>
-                        <li><a href="/about-us">About Us </a></li>
-                        <li><a href="#">General Terms and Conditions</a></li>
+                        <li><Link to="/about-us">About Us</Link></li>
+                        <li><Link to="/terms-and-conditions">General Terms and Conditions</Link></li>
                         <li><Link to="/contact-us">Contact Form</Link></li>
                     </ul>
                 </div>
