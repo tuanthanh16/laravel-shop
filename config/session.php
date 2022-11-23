@@ -155,8 +155,8 @@ return [
     |
     */
 
-    // 'domain' => env('SESSION_DOMAIN'),
-    'domain' => '.laravel-shop.test',
+    'domain' => env('SESSION_DOMAIN'),
+    // 'domain' => '.laravel-shop.test',
 
     /*
     |--------------------------------------------------------------------------
