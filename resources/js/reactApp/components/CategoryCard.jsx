@@ -7,7 +7,7 @@ const CategoryCard = ({ category }) => {
     const [detail, setDetail] = useState([])
 
     return (
-        < div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4 mb-4" >
+        < div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mb-4" >
            
             <div className="card h-100 shadow rounded">
 
