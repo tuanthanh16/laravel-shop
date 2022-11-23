@@ -69,17 +69,17 @@ const UserForm = ({ onShow }) => {
         // these lines of code are to create order in database
         // not working on server yet
         //--------------------------------------------------------
-        // const sale = await axios.post("/api/create-sale", saleData);
-        // const sale_id = sale.data.id;
-        // //create sale_details with sale_id and cart context
-        // cart.forEach((item) => {
-        //     const detailData = {
-        //         sale_id: sale_id,
-        //         product_id: item.id,
-        //         quantity: item.qty,
-        //     };
-        //     axios.post("/api/create-detail", detailData);
-        // });
+        const sale = await axios.post("/api/create-sale", saleData);
+        const sale_id = sale.data.id;
+        //create sale_details with sale_id and cart context
+        cart.forEach((item) => {
+            const detailData = {
+                sale_id: sale_id,
+                product_id: item.id,
+                quantity: item.qty,
+            };
+            axios.post("/api/create-detail", detailData);
+        });
         //---------------------------------------------------------
         // clear cart
         setCart([]);
