@@ -74,7 +74,7 @@ const ProductCard = ({ product }) => {
             <div className="card h-100 shadow rounded">
                 <div
                     onClick={toggleShowProduct}
-                    class="thumbnail"
+                    className="thumbnail"
                     style={{
                         backgroundImage: `url(${"/product_images/" + product.image + ".png"
                             })`,

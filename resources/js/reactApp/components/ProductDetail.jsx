@@ -4,13 +4,13 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ProductModal from "./ProductModal";
 
-const ProductDetail = ({productId, setDetail, detail,setShowProduct}) => {
+const ProductDetail = ({productId, setDetail, detail, setShowProduct}) => {
 
   // const [detail, setDetail] = useState([])
   // const [modalShow, setModalShow] = React.useState(false);
 
   const loadDetail = async () => {
-    const response = await fetch(`api/product/${productId}`)
+    const response = await fetch(`/api/product/${productId}`)
     const data = await response.json();
 
     console.log(data.data[0]);
@@ -38,7 +38,7 @@ const ProductDetail = ({productId, setDetail, detail,setShowProduct}) => {
     onHide={() =>{
       setDetail(false)
       setShowProduct(false)
-      console.log('hello')
+      // console.log('hello')
 
     }}
   />
