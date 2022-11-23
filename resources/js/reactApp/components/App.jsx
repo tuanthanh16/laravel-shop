@@ -21,20 +21,19 @@ import CartBox from "./cart/CartBox";
 import Store from "../Pages/Store";
 import Checkout from "./cart/Checkout";
 
-
 export default function App() {
     const location = useLocation();
     const [cart, setCart] = useState([]);
     const guestUser = [{ id: -100, name: "Guest" }, { token: null }];
     const [user, setUser] = useState(guestUser);
-    const [keyword, setKeyword] = useState(null)
+    const [keyword, setKeyword] = useState(null);
     const getUser = async () => {
         const logUser = await loadUser();
         if (logUser) {
             setUser(logUser);
-            console.log(`user ${logUser} had logged in`);
+            // console.log(`user ${logUser} had logged in`);
         } else {
-            console.log("user not found");
+            // console.log("user not found");
         }
     };
     useEffect(() => {
@@ -51,18 +50,39 @@ export default function App() {
 
                         <Routes>
                             <Route path="/" element={<Home />} />
-                            <Route path="/store" element={<Store keyword={keyword} setKeyword={setKeyword} />} />
+                            <Route
+                                path="/store"
+                                element={
+                                    <Store
+                                        keyword={keyword}
+                                        setKeyword={setKeyword}
+                                    />
+                                }
+                            />
                             <Route
                                 path="/store/:categoryId"
-                                element={<Store keyword={keyword} setKeyword={setKeyword} />}
+                                element={
+                                    <Store
+                                        keyword={keyword}
+                                        setKeyword={setKeyword}
+                                    />
+                                }
                             />
                             <Route
                                 path="/search"
-                                element={<Store keyword={keyword} setKeyword={setKeyword} />}
+                                element={
+                                    <Store
+                                        keyword={keyword}
+                                        setKeyword={setKeyword}
+                                    />
+                                }
                             />
                             <Route path="/about-us" element={<AboutUs />} />
                             <Route path="/contact-us" element={<ContactUs />} />
-                            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+                            <Route
+                                path="/terms-and-conditions"
+                                element={<TermsAndConditions />}
+                            />
                             <Route path="/login" element={<LoginForm />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/cart" element={<CartBox />} />

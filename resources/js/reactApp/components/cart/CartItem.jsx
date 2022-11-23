@@ -40,7 +40,12 @@ const CartItem = ({ id, img, name, quantity, price }) => {
         <div className="row mb-4 d-flex justify-content-between align-items-center">
             <div className="col-md-2 col-lg-2 col-xl-2">
                 <img
-                    src="https://via.placeholder.com/150"
+                    src={
+                        window.location.origin +
+                        "/product_images/" +
+                        img +
+                        ".png"
+                    }
                     className="img-fluid rounded-3"
                     alt=""
                 />

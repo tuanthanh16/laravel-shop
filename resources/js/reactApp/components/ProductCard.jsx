@@ -3,13 +3,9 @@ import { Button } from "react-bootstrap";
 import CartContext from "./CartContext";
 import ProductDetail from "../components/ProductDetail";
 
-
-
 const ProductCard = ({ product }) => {
-
-    const [showProduct, setShowProduct] = useState(false)
-    const [detail, setDetail] = useState([])
-
+    const [showProduct, setShowProduct] = useState(false);
+    const [detail, setDetail] = useState([]);
 
     // add products to cart
 
@@ -33,6 +29,7 @@ const ProductCard = ({ product }) => {
                 price: product.price,
                 stock: product.stock,
                 qty: amount,
+                img: product.image,
             });
         }
         setCart(newCart);
@@ -61,23 +58,28 @@ const ProductCard = ({ product }) => {
 
     // function to get product detail
     const toggleShowProduct = () => {
-
         setDetail(true);
         setShowProduct(true);
-    }
+    };
 
     return (
-
-        < div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4" >
-            {showProduct && <ProductDetail productId={product.id} detail={detail} setDetail={setDetail} setShowProduct={setShowProduct}/>
-            }
+        <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4">
+            {showProduct && (
+                <ProductDetail
+                    productId={product.id}
+                    detail={detail}
+                    setDetail={setDetail}
+                    setShowProduct={setShowProduct}
+                />
+            )}
             <div className="card h-100 shadow rounded">
                 <div
                     onClick={toggleShowProduct}
                     className="thumbnail"
                     style={{
-                        backgroundImage: `url(${"/product_images/" + product.image + ".png"
-                            })`,
+                        backgroundImage: `url(${
+                            "/product_images/" + product.image + ".png"
+                        })`,
                     }}
                 ></div>
                 {/* <img src={"/product_images/" + product.image + ".png"} alt="" className="card-img-top " /> */}
@@ -92,15 +94,19 @@ const ProductCard = ({ product }) => {
                     <div className="">
                         <p className="card-text">{product.description}</p>
                     </div>
-                    <Button className="btn btn-light"
+                    <Button
+                        className="btn btn-light"
                         onClick={() => {
                             decrement();
                         }}
                     >
                         -
                     </Button>
-                    <span className="fs-5" style={{padding: "1rem"}}>{amount}</span>
-                    <Button className="btn btn-light"
+                    <span className="fs-5" style={{ padding: "1rem" }}>
+                        {amount}
+                    </span>
+                    <Button
+                        className="btn btn-light"
                         onClick={() => {
                             increment();
                         }}
@@ -121,12 +127,8 @@ const ProductCard = ({ product }) => {
                     </div>
                 </div>
             </div>
-        </div >
-    )
-}
+        </div>
+    );
+};
 
-export default ProductCard
-
-
-
-
+export default ProductCard;

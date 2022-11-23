@@ -47,6 +47,7 @@ const CartBox = () => {
                                                     <CartItem
                                                         key={index}
                                                         id={item.id}
+                                                        img={item.img}
                                                         name={item.name}
                                                         quantity={item.qty}
                                                         price={item.price}
