@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\SaleController;
 use App\Http\Controllers\Api\SaleDetailController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -46,3 +47,6 @@ Route::post('/create-sale', [SaleController::class, 'store']);
 
 // sale_detail controller
 Route::post('/create-detail', [SaleDetailController::class, 'store']);
+
+// Mail controller
+Route::get('/mail',[MailController::class, 'basic_email']);
