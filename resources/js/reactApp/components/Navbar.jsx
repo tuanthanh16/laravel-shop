@@ -115,9 +115,7 @@ function Navbar({ keyword, setKeyword }) {
                                         >
                                             Logout
                                         </a>
-                                        <a class="dropdown-item" href="#">
-                                            Something else here
-                                        </a>
+                                        
                                     </div>
                                 </div>
                             </div>
