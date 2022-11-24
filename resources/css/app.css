@@ -155,10 +155,14 @@ a:hover {
 .thumbnail:hover {
     transform: scale(1.1);
     border-style: solid;
-    border-color: rgba(103, 179, 99, 0.731);
+    border-color: #00B5A2;
 
+}
 
-
+.thumbnail-category:hover {
+    transform: scale(1.1);
+    border-style: solid;
+    border-color: #00B5A2;
 
 }
 
