@@ -41,10 +41,7 @@ const ContactUs = () => {
         <>
             <section
                 className="h-auto p-5"
-                style={{
-                    backgroundImage:
-                        "'../../images/background-imgs/fresh-colourful-ingredients-mexican-cuisine.jpg'",
-                }}
+                style={{ backgroundColor: "rgb(242, 255, 244)"}}
             >
                 <div className="container h-75">
                     <div
@@ -101,7 +98,7 @@ const ContactUs = () => {
                     <Modal.Title>Thank you</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    Your message had been sent, thank you for your feedback!
+                    Your message has been sent, thank you for your feedback!
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
