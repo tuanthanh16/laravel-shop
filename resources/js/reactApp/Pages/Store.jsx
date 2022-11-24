@@ -51,7 +51,7 @@ const Store = ({ keyword }) => {
         } else if (keyword) {
             setpageTitle('Search: ' + keyword)
         } else {
-            setpageTitle('Store')
+            setpageTitle('Our products')
         }
     }
 
