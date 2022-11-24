@@ -30,7 +30,7 @@ const Home = () => {
 
         <>
             <div className='container-fluid'>
-                <h3 className='text-center mt-5 text-uppercase '>Home Page</h3>
+                <h3 className='text-center mt-5 text-uppercase '>Categories:</h3>
                 <div className="container py-4" >
                     <div className="row">
 
