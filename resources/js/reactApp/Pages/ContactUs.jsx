@@ -9,7 +9,7 @@ const ContactUs = () => {
 
 
 
-      <section className="h-auto p-5" style={{ backgroundImage: "'../../images/background-imgs/fresh-colourful-ingredients-mexican-cuisine.jpg'" }}>
+      <section className="h-auto p-5" style={{ backgroundColor: "#f2fff4" }}>
         <div className="container h-75">
           <div
             className="card text-black m-auto"

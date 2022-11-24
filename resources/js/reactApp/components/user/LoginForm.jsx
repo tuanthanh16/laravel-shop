@@ -26,10 +26,10 @@ const LoginForm = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     return (
-        <section className="h-auto p-5" style={{ backgroundColor: "#eee" }}>
+        <section className="h-auto p-5" style={{ backgroundColor: "#DBF5F0" }}>
             <div className="container h-75">
                 <div
-                    className="card text-black m-auto"
+                    className="card text-black m-auto"  
                     style={{ borderRadius: "25px", width: "500px" }}
                 >
                     <div className="card-body p-md-2">
