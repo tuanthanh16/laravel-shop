@@ -6,7 +6,7 @@ const CartSummaryItem = ({ name, quantity, price }) => {
                 <h6 className="my-0">{name}</h6>
                 <small className="text-muted">Brief description</small>
             </div>
-            <span className="text-muted">${totalCost.toFixed(2)}</span>
+            <span className="text-muted">{totalCost.toFixed(2)}</span>
         </li>
     );
 };

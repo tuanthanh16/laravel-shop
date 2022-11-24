@@ -86,16 +86,16 @@ const CartSummary = () => {
 
                 <li className="list-group-item d-flex justify-content-between">
                     <span>Total</span>
-                    <strong>{totalCost.toFixed(2)}Kč</strong>
+                    <strong>{totalCost.toFixed(2)}</strong>
                 </li>
                 <li className="list-group-item d-flex justify-content-between">
                     <span>Discount</span>
-                    <strong>{discountAmount.toFixed(2)}Kč</strong>
+                    <strong>{discountAmount.toFixed(2)}</strong>
                 </li>
                 <li className="list-group-item d-flex justify-content-between">
-                    <span>Total after discount</span>
+                    <span>Total after discount (CZK)</span>
                     <strong>
-                        {Number(totalCost - discountAmount).toFixed(2)} Kč
+                        {Number(totalCost - discountAmount).toFixed(2)}
                     </strong>
                 </li>
             </ul>

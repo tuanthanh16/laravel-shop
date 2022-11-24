@@ -64,9 +64,9 @@ const CartBox = () => {
 
                                             <div className="d-flex justify-content-between mb-4">
                                                 <h5 className="text-uppercase">
-                                                    Total price
+                                                    Total price (CZK)
                                                 </h5>
-                                                <h5> {totalCost} Kč</h5>
+                                                <h5> {totalCost}</h5>
                                             </div>
                                         </div>
                                     </div>

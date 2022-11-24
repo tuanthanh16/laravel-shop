@@ -73,7 +73,7 @@ const CartItem = ({ id, img, name, quantity, price }) => {
                 </button>
             </div>
             <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h6 className="mb-0">{Number(totalPrice).toFixed(2)} Kč</h6>
+                <h6 className="mb-0">{Number(totalPrice).toFixed(2)}</h6>
             </div>
             <div className="col-md-1 col-lg-1 col-xl-1 text-end">
                 <i
