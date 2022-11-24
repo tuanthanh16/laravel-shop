@@ -22,7 +22,13 @@ const Register = () => {
 
         // console.log(regData);
         const response = await axios.post("/register", regData);
-        console.log(response);
+        // console.log(response);
+        // clear all refs
+        nameRef.current.value = "";
+        surNameRef.current.value = "";
+        emailRef.current.value = "";
+        passwordRef.current.value = "";
+
         //redirect
         navigate("/");
     };
@@ -111,20 +117,6 @@ const Register = () => {
                                                     />
                                                 </div>
                                             </div>
-
-                                            {/* <div className="form-check d-flex justify-content-center mb-5">
-                                                <input
-                                                    className="form-check-input me-2"
-                                                    type="checkbox"
-                                                    value=""
-                                                />
-                                                <label className="form-check-label">
-                                                    I agree all statements in{" "}
-                                                    <a href="#!">
-                                                        Terms of service
-                                                    </a>
-                                                </label>
-                                            </div> */}
 
                                             <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                 <button
