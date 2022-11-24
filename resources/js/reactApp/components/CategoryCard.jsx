@@ -13,7 +13,7 @@ const CategoryCard = ({ category }) => {
 
                 <Link to={"/store/" + category.id}>
                     <div 
-                    className="thumbnail"
+                    className="thumbnail-category"
                     style={{ backgroundImage: `url(${"/category_images/" + category.image + ".png"})` }}></div>
                     {console.log(category.image)}
                 </Link>
