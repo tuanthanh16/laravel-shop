@@ -40,7 +40,7 @@ const AboutUs = () => {
                                     <i className="bi bi-balloon-heart"></i>
                                     <h3>Where to find us?</h3>
                                     <hr />
-                                    <p>The Balkan Discount Market is located in Krč, Prague 4, just 20 minutes by walk from Krčský les and within easy access of the metro C line, stop Budějovická.<br /><br />
+                                    <p>The Balkan Discount Market is located in Krč, Prague 4, just 20 minutes by walk from Krčský les and within easy access of the metro C line, stop Budějovická.<br />
                                     A new branch coming up! <br />
                                     We are working on opening the next branch for our customers in the lovely outskirts in Hloubětin, Prague 14, very close to the highway. Follow our social media for more updates.</p>
 
