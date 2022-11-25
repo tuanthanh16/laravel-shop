@@ -21,7 +21,7 @@ const CategoryCard = ({ category }) => {
 
 
                 <div className="card-body">
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-center">
 
                         <Link to={"/store/" + category.id}>
                             <h5 className="card-title">
